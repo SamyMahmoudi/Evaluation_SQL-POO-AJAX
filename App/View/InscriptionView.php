@@ -25,17 +25,23 @@
     </nav>
 
     <div class="main-inscription">
+
         <form action="" id="form-inscription">
 
             <h1>Formulaire d'inscription</h1>
 
             <input type="text" name="" placeholder="entrez votre nom d'utilisateur">
+
             <input type="email" name="" placeholder="entrez votre adresse mail">
+
             <input type="password" name="" placeholder="entrez un mot de passe">
+
             <input type="password" name="" placeholder="entrez un mot de passe">
+
             <input type="submit" value="S'inscrire">
 
         </form>
+        
     </div>
 
 
