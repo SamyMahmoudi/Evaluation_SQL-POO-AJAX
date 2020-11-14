@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-accueil {
+    height: 100vh;
+    background-image: url("../images/background-accueil.jpg");
+}
+
+.nav-accueil {
+    width: 100%;
+    height: 20vh;
+    background-color: rgba(0, 106, 255, 0.3);
+}
+
+.nav-accueil ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-accueil ul li {
+    padding: 0px 20px;
+}
+
+.nav-accueil ul li a {
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+}
+
+.nav-accueil ul li a:hover {
+    color: black;
+    border-bottom: 2px solid black;
+}

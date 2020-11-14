@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#couleur{
+    background-color: blue;
+    width: auto;
+    height: 100px;
+}
+
+main {
+    
+display:flex ;
+flex-direction: column;
+align-items: center;
+}
+
+main #connexion{
+    margin: 15px;
+}
+main #username{
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+h1{
+    margin-top: 10px;
+}
+
+#fond{
+    background-color: #c0c0c0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    border-radius: 10px;
+    padding: 15px;
+}
+#envoyer{
+    margin-left: 80px;
+    width: 100px;
+    height: 25px;
+
+}

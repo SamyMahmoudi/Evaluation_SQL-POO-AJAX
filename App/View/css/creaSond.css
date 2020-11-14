@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@font-face{
+    font-family: "Poppins";
+    src: url(font/Poppins-Regular.ttf);
+}
+body{
+    font-family: "Poppins";
+}
+header{
+    height: 120px;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    background-color: grey;
+    color: white;
+}
+h1{
+    text-align: center;
+}
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+footer{
+    height: 70px;
+    background-color: grey;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    padding-top: 25px;
+    color: white;
+    margin-top: 70px;
+}
+footer p{
+    text-align: center;
+}
+main{
+    margin-bottom: 120px;
+}
+
+
+
+
+
+section{
+    width: 85%;
+    height: calc(100%+70px);
+    margin: auto;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+    color: white;
+    border-radius: 20px;
+}
+#intitule{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 15px;
+    width: 90%;
+    margin: auto;
+}
+#intitule input{
+    height: 30px;
+    text-align: center;
+    font-size: large;
+}
+#intitule *{
+    margin-bottom: 25px;
+}
+.reponse{
+    display: flex;
+    
+    width: 90%;
+    margin: auto;
+    margin-bottom: 25px;
+}
+.reponse label{
+    margin-right: 25px;
+}
+.reponse input{
+    width: 90%;
+}
+section button{
+    margin: auto;
+}
+.button {
+    position: relative;
+    background-color: #ffffff;
+    border: none;
+    font-size: 20px;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:after {
+    content: "";
+    background: grey;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+#bouttons{
+    display: flex;
+    justify-content: space-around;
+}
