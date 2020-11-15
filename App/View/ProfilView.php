@@ -1,43 +1,3 @@
-<?php 
-
-    $pdo = new PDO("mysql:host=localhost;dbname=SondaPote","root","");
-    $query= $pdo->query("SELECT user_name,user_mail,user_password FROM t_users WHERE user_id = 1");
-    $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    
-    // Changement de nom
-    if (isset($_POST["update-user_name"])) {
-        if(empty($_POST["new-user_name"])) {
-            header("Location:ProfilView.php?champ-vide");
-        } else {
-        $updateUserName = $pdo->prepare("UPDATE t_users SET user_name= ? WHERE user_id = 1");
-        $updateUserName->execute(array($_POST["new-user_name"]));
-        header("Location:ProfilView.php");
-        }
-    }
-        
-    // Changement d'adresse mail
-    if (isset($_POST["update-user_mail"])) {
-        if (empty($_POST["new-user_mail"])) {
-            header("Location:ProfilView.php?champ-vide");
-        } else {
-        $updateUserMail = $pdo->prepare("UPDATE t_users SET user_mail= ? WHERE user_id = 1");
-        $updateUserMail->execute(array($_POST["new-user_mail"]));
-        header("Location:ProfilView.php");
-        }
-    }
-
-    // Changement de mot de passe
-    if (isset($_POST["update-user_password"])) {
-        if (empty($_POST["new-user_password"])){
-            header("Location:ProfilView.php?champ-vide");
-        } else {
-        $updateUserPassword = $pdo->prepare("UPDATE t_users SET user_password= ? WHERE user_id = 1");
-        $updateUserPassword->execute(array($_POST["new-user_password"]));
-        header("Location:ProfilView.php");
-        }
-    }
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -79,13 +39,13 @@
 
                 <?php foreach($result as $dataUser):?>
                 <div class="profil-data">
-                    <h2><?= $dataUser["user_name"] ?></h2>
+                    <h2><?= $dataUser->user_name ?></h2>
                 </div>
                 <div class="profil-data">
-                    <h2><?= $dataUser["user_mail"] ?></h2>
+                    <h2><?= $dataUser->user_mail ?></h2>
                 </div>
                 <div class="profil-data">
-                    <h2><?= $dataUser["user_password"] ?></h2>
+                    <h2><?= $dataUser->user_password?></h2>
                 </div>
                 <?php endforeach ?>
             </div>
