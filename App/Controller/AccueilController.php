@@ -11,7 +11,7 @@ class AccueilController {
        $this->model = new AccueilModel();
     }
 
-    public function render()
+    public function accueil()
     {
 
       require ROOT."/App/View/AccueilView.php";

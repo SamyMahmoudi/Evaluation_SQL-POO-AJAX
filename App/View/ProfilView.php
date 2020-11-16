@@ -14,7 +14,10 @@
         <nav class="nav-user">
             <ul>
                 <li>
-                    <a href="ProfilView.php">Profil</a>
+                    <a href="">Accueil</a>
+                </li>
+                <li>
+                    <a href="index.php?page=profil">Profil</a>
                 </li>
                 <li>
                     <a href="">Sondage</a>
@@ -22,9 +25,7 @@
                 <li>
                     <a href="">Amis</a>
                 </li>
-                <li>
-                    <a href="">Déconnexion</a>
-                </li>
+                
             </ul>
         </nav>
     </header>
@@ -37,15 +38,15 @@
 
                 <!-- Données actuelles de l'utilisateur -->
 
-                <?php foreach($result as $dataUser):?>
+                <?php foreach($profil as $dataUser):?>
                 <div class="profil-data">
-                    <h2><?= $dataUser->user_name ?></h2>
+                    <h2><?= htmlspecialchars($dataUser->user_name) ?></h2>
                 </div>
                 <div class="profil-data">
-                    <h2><?= $dataUser->user_mail ?></h2>
+                    <h2><?= htmlspecialchars($dataUser->user_mail) ?></h2>
                 </div>
                 <div class="profil-data">
-                    <h2><?= $dataUser->user_password?></h2>
+                    <h2><?= htmlspecialchars($dataUser->user_password)?></h2>
                 </div>
                 <?php endforeach ?>
             </div>

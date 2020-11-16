@@ -5,24 +5,19 @@ use App\Model\ProfilModel;
 
 class ProfilController {
 
-
     public function __construct()
     {
        $this->model = new ProfilModel();
     }
 
-    public function render()
+    public function profil()
     {
-
-      $result = $this->model->query("SELECT user_name,user_mail,user_password FROM t_users WHERE user_id = 1");
-
-      $this->model->updateName();
-      $this->model->updateMail();
-      $this->model->updatePassword();
-
+      // recupere donnees utilisateur
+      $profil = $this->model->query("SELECT user_name,user_mail,user_password FROM t_users WHERE user_id = 1");
+      // modification données
+      $this->model->updateUserData();
+      // template page profil
       require ROOT."/App/View/ProfilView.php";
 
     }
-
-
 }
