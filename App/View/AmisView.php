@@ -1,3 +1,12 @@
+<?php 
+
+$pdo = new PDO ("mysql:host=localhost;dbname=sondapote","root","");
+$query = $pdo->query("SELECT user_name FROM t_users");
+$users = $query->fetchAll(PDO::FETCH_OBJ);
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -34,10 +43,10 @@
     <main class="main-amis">
         <section class="recherche-amis">
             <h1>Ajouter un ami</h1>
-            <div>
-                <input type="search" name="" id="" placeholder="rechercher un amis">
-                <button type="submit"><img src="../../Public/images/icon-search.png" alt=""></button>
-            </div>
+            <form method="POST">
+                <input type="search" name="search-user" id="" placeholder="rechercher un joueur">
+                <button type="submit" name="valid-search-user"><img src="../../Public/images/icon-search.png" alt="search-icon"></button>
+            </form>
             <table>
                 <thead>
                     <tr>
@@ -46,31 +55,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
+                        <!-- <php  
+                            if (isset($_POST["valid-search-user"]))
+                            {    if(empty($_POST["search-user"])){
+                                header("Location:amisView.php");
+                            } else {
+                                $searchQuery = $pdo->prepare("SELECT user_name,user_id FROM t_users WHERE user_name LIKE '%?%'");
+                                $searchQuery->execute(array($_POST["search-user"]));
+                                // $resultSearch = $searchQuery->fetchAll(PDO::FETCH_OBJ); 
+                                }
+                            }
+                        ?> -->
+
+                        <?php foreach($searchQuery as $sch):?>
+                        <tr>
+                            <td><?= $sch["user_name"] ?></td>
+                            <td><button>Ajouter</button></td>
+                        </tr>
+                        <?php endforeach ?>
+
                 </tbody>
             </table>
         </section>
 
-        <section class="listing-amis">
+        <form class="listing-amis" method="POST">
             <h1>Liste d'amis</h1>
             <table>
                 <thead>
@@ -80,25 +88,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach($users as $user):?>
                     <tr>
-                        <td>Username</td>
-                        <td><button>Supprimer</button></td>
+                        <?= "<td>".$user->user_name."</td>" ?>
+                        <td><button type="submit">Supprimer</button></td>
                     </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Supprimer</button></td>
+                    <?php endforeach ?>
+                    
                     </tr>
                 </tbody>
             </table>
-        </section>
+        </form>
 
     </main>
 

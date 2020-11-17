@@ -11,10 +11,10 @@ class AccueilController {
        $this->model = new AccueilModel();
     }
 
-    public function accueil()
+    public function render()
     {
 
-      require ROOT."/App/View/AccueilView.php";
+      require ROOT."App/View/AccueilView.php";
 
     }
 
