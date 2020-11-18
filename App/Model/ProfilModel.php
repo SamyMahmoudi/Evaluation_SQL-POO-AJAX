@@ -12,9 +12,18 @@ class ProfilModel extends Database{
             if(empty($_POST["new-user_name"])) {
                     header("Location:?page=profil_erreur");
             } else {
-                $updateUserName = $this->pdo->prepare("UPDATE t_users SET user_name= ? WHERE user_id = 1");
-                $updateUserName->execute(array($_POST["new-user_name"]));
-                header("Location:?page=profil");
+                // $verifUse = $this->pdo->query('SELECT COUNT(*) FROM t_users WHERE user_name = '."'".$_POST["new-user_name"]."'".'');
+                // $verif = 0;
+                // //$verif = $verifUse->fetchColumn();
+                // if($verif == $verifUse)
+                // {
+                    $updateUserName = $this->pdo->prepare("UPDATE t_users SET user_name= ? WHERE user_id = 1");
+                    $updateUserName->execute(array($_POST["new-user_name"]));
+                    header("Location:?page=profil");
+                    
+                // }else {
+                // header("Location:?page=profil_dejaPris"); 
+                // }
             }
         // changement d'adresse mail
         } else if (isset($_POST["update-user_mail"])) {

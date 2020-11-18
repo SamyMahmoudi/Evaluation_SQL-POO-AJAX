@@ -14,7 +14,7 @@
         <nav class="nav-user">
             <ul>
                 <li>
-                    <a href="">Accueil</a>
+                    <a href="">Actu</a>
                 </li>
                 <li>
                     <a href="index.php?page=profil">Profil</a>
@@ -23,7 +23,7 @@
                     <a href="">Sondage</a>
                 </li>
                 <li>
-                    <a href="">Amis</a>
+                    <a href="index.php?page=amis">Amis</a>
                 </li>
                 
             </ul>

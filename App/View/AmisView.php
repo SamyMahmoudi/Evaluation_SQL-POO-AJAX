@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
-    <link rel="stylesheet" href="../../Public/css/profil.css">
-    <link rel="stylesheet" href="../../Public/css/pageAmis.css">
+    <link rel="stylesheet" href="css/profil.css">
+    <link rel="stylesheet" href="css/pageAmis.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                     <a href="">Sondage</a>
                 </li>
                 <li>
-                    <a href="">Amis</a>
+                    <a href="index.php?page=amis">Amis</a>
                 </li>
 
             </ul>
@@ -34,10 +34,10 @@
     <main class="main-amis">
         <section class="recherche-amis">
             <h1>Ajouter un ami</h1>
-            <div>
-                <input type="search" name="" id="" placeholder="rechercher un amis">
-                <button type="submit"><img src="../../Public/images/icon-search.png" alt=""></button>
-            </div>
+            <form method="POST">
+                <input type="search" name="search-user" id="" placeholder="rechercher un joueur">
+                <button type="submit" name="valid-search-user"><img src="images/icon-search.png" alt="search-icon"></button>
+            </form>
             <table>
                 <thead>
                     <tr>
@@ -46,31 +46,30 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Ajouter</button></td>
-                    </tr>
+                        <?php  
+                        $pdo = new PDO ("mysql:host=localhost;dbname=sondapote","root","");
+                            if (isset($_POST["valid-search-user"]))
+                            {    if(empty($_POST["search-user"])){
+                                header("Location:amisView.php");
+                            } else {
+                                $searchQuery = $pdo->query("SELECT user_name,user_id FROM t_users WHERE user_name LIKE '%".$_POST["search-user"]."%'");
+                                // $searchQuery->execute(array($_POST["search-user"]));
+                                $resultSearch = $searchQuery->fetchAll();
+                                foreach($resultSearch as $sch): 
+                                    echo "<tr><td>".$sch["user_name"]."</td><td><button type='submit'>Ajouter</button></td></tr>";
+                                endforeach;
+                                }
+                            }
+                        ?>
+
+                         
+                        
+
                 </tbody>
             </table>
         </section>
 
-        <section class="listing-amis">
+        <form class="listing-amis" method="POST">
             <h1>Liste d'amis</h1>
             <table>
                 <thead>
@@ -80,25 +79,17 @@
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach($amis as $ami):?>
                     <tr>
-                        <td>Username</td>
-                        <td><button>Supprimer</button></td>
+                        <?= "<td>".$ami->user_name."</td>" ?>
+                        <td><button type="submit">Supprimer</button></td>
                     </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Supprimer</button></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><button>Supprimer</button></td>
+                    <?php endforeach ?>
+                    
                     </tr>
                 </tbody>
             </table>
-        </section>
+        </form>
 
     </main>
 

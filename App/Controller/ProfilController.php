@@ -10,7 +10,7 @@ class ProfilController {
        $this->model = new ProfilModel();
     }
 
-    public function profil()
+    public function render()
     {
       // recupere donnees utilisateur
       $profil = $this->model->query("SELECT user_name,user_mail,user_password FROM t_users WHERE user_id = 1");
