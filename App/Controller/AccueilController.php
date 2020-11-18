@@ -14,7 +14,7 @@ class AccueilController {
     public function render()
     {
 
-      require ROOT."App/View/AccueilView.php";
+      require ROOT."/App/View/AccueilView.php";
 
     }
 

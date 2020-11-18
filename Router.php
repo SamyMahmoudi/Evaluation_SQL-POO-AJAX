@@ -8,13 +8,14 @@ if(array_key_exists("page",$_GET))
 {
     switch ($_GET["page"]) :
 
-        // case 'profil' || 'profil_erreur':
-        //     $controller = new ProfilController();
-        //     $controller->render();
-        //     break;
+        case 'profil':
+            $controller = new ProfilController();
+            $controller->render();
+            break;
         case 'amis':
             $controller = new AmisController();
             $controller->render();
+            //$controller->SearchFriends();
             break;
         default:
             $controller = new  AccueilController();

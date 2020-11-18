@@ -30,7 +30,7 @@
     border: solid rgb(157, 156, 156);
 }
 
-.recherche-amis button[type="submit"] {
+.recherche-amis form button[type="submit"] {
     padding: 8px 12px;
     background-color: white;
     cursor: pointer;
