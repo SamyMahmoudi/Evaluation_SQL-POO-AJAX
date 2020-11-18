@@ -16,7 +16,7 @@
                     <a href="">Accueil</a>
                 </li>
                 <li>
-                    <a href="">Inscription</a>
+                    <a href="index.php?page=inscription">Inscription</a>
                 </li>
                 <li>
                     <a href="">Connexion</a>
