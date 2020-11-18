@@ -1,0 +1,112 @@
+.main-amis {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(247, 235, 186);
+}
+
+.recherche-amis {
+    width: 40vw;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(196, 191, 223);
+}
+
+.recherche-amis h1 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.recherche-amis div {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+}
+
+.recherche-amis input[type="search"] {
+    padding: 8px 12px;
+    border: solid rgb(157, 156, 156);
+}
+
+.recherche-amis button[type="submit"] {
+    padding: 8px 12px;
+    background-color: white;
+    cursor: pointer;
+    border: solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recherche-amis button[type="submit"] img {
+    width: 20px;
+}
+
+.recherche-amis table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.recherche-amis tr:nth-child(even) {
+    background-color: #d3d1d1;
+}
+
+.recherche-amis table td,
+.recherche-amis table th {
+    border: 1px solid rgb(110, 105, 105);
+    padding: 8px;
+    text-align: center;
+}
+
+.recherche-amis table th {
+    background-color: chartreuse;
+}
+
+.recherche-amis table td button {
+    width: 80%;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.listing-amis {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+    width: 40vw;
+    background-color: rgb(241, 176, 153);
+}
+
+.listing-amis h1 {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.listing-amis table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.listing-amis tr:nth-child(even) {
+    background-color: #d3d1d1;
+}
+
+.listing-amis table td,
+.listing-amis table th {
+    border: 1px solid rgb(110, 105, 105);
+    padding: 8px;
+    text-align: center;
+}
+
+.listing-amis table th {
+    background-color: chartreuse;
+}
+
+.listing-amis table td button {
+    width: 80%;
+    padding: 8px 12px;
+    cursor: pointer;
+}

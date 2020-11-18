@@ -13,13 +13,13 @@
         <nav class="nav-accueil">
             <ul>
                 <li>
-                    <a href="AccueilView.php">Accueil</a>
+                    <a href="">Accueil</a>
                 </li>
                 <li>
-                    <a href="InscriptionView.php">Inscription</a>
+                    <a href="">Inscription</a>
                 </li>
                 <li>
-                    <a href="ConnexionView.php">Connexion</a>
+                    <a href="">Connexion</a>
                 </li>
             </ul>
         </nav>
