@@ -1,8 +1,9 @@
 <?php 
 
-use App\Controller\ProfilController;
 use App\Controller\AmisController;
+use App\Controller\ProfilController;
 use App\Controller\AccueilController;
+use App\Controller\ConnexionController;
 use App\Controller\InscriptionController;
 
 if(array_key_exists("page",$_GET))
@@ -21,6 +22,18 @@ if(array_key_exists("page",$_GET))
         case 'inscription' :
             $controller = new InscriptionController();
             $controller->inscrire();
+            break;
+        case 'Connexion'  :
+            $controller = new ConnexionController();
+            $controller->Connexion();
+            break;
+        case 'Connexion_login_err_password'  :
+            $controller = new ConnexionController();
+            $controller->Connexion();
+            break;
+        case 'Connexion_login_err_already'  :
+            $controller = new ConnexionController();
+            $controller->Connexion();
             break;
             
             default:

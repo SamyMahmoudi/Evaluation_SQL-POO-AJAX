@@ -1,15 +1,28 @@
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page connexion</title>
-    <link href="css/connexion.css" rel="stylesheet" type="text/css">
+    <link  href="css/connexion.css" rel="stylesheet" type="text/css">
+    <link  href="css/accueil.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div id="couleur"></div>
+<header class="header-accueil">
+        <nav class="nav-accueil">
+            <ul>
+                <li>
+                    <a href="index.php?page=">Accueil</a>
+                </li>
+                <li>
+                    <a href="index.php?page=inscription">Inscription</a>
+                </li>
+                <li>
+                    <a href="index.php?page=Connexion">Connexion</a>
+                </li>
+            </ul>
         </nav>
     </header>
     <main>
@@ -17,12 +30,12 @@
         <h1>
             Connexion
         </h1>
-        <form action="" id="connexion">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username"><br>
-            <label for="username">Mot de passe: </label>
-            <input type="text" id="mdp" name="mdp"> <br><br>
-            <input type="submit" id="envoyer" name="envoyer">
+        <form  method="POST" id="connexion">
+            <label for="Email">Email:</label>
+            <input type="text" id="username" name="email" placeholder="email"><br>
+            <label for="password">Mot de passe: </label>
+            <input type="password" id="mdp" name="password" placeholder="votre mot de passe"> <br><br>
+            <button type="submit" id="envoyer" name="submit">Connexion</button>
         </form>
         </div>
     </main>
