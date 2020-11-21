@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page connexion</title>
     <link  href="css/connexion.css" rel="stylesheet" type="text/css">
-    <link  href="css/accueil.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/inscription.css">
 </head>
 <body>
 <header class="header-accueil">
-        <nav class="nav-accueil">
+    <nav class="nav-form">
             <ul>
                 <li>
-                    <a href="index.php?page=">Accueil</a>
+                    <a href="index.php?">Accueil</a>
                 </li>
                 <li>
                     <a href="index.php?page=inscription">Inscription</a>
