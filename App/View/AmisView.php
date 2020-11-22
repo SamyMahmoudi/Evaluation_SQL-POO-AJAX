@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
     <header>
         <nav class="nav-user">
             <ul>
@@ -26,48 +25,11 @@
                 <li>
                     <a href="index.php?page=amis">Amis</a>
                 </li>
-
             </ul>
         </nav>
     </header>
 
     <main class="main-amis">
-        <section class="recherche-amis">
-            <h1>Ajouter un ami</h1>
-            <form method="POST">
-                <input type="search" name="search-user" id="" placeholder="rechercher un joueur">
-                <button type="submit" name="valid-search-user"><img src="images/icon-search.png" alt="search-icon"></button>
-            </form>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Utilisateur</th>
-                        <th>Ajouter</th>
-                    </tr>
-                </thead>
-                <tbody>
-                        <?php  
-                        $pdo = new PDO ("mysql:host=localhost;dbname=sondapote","root","");
-                            if (isset($_POST["valid-search-user"]))
-                            {    if(empty($_POST["search-user"])){
-                                header("Location:amisView.php");
-                            } else {
-                                $searchQuery = $pdo->query("SELECT user_name,user_id FROM t_users WHERE user_name LIKE '%".$_POST["search-user"]."%'");
-                                // $searchQuery->execute(array($_POST["search-user"]));
-                                $resultSearch = $searchQuery->fetchAll();
-                                foreach($resultSearch as $sch): 
-                                    echo "<tr><td>".$sch["user_name"]."</td><td><button type='submit'>Ajouter</button></td></tr>";
-                                endforeach;
-                                }
-                            }
-                        ?>
-
-                         
-                        
-
-                </tbody>
-            </table>
-        </section>
 
         <form class="listing-amis" method="POST">
             <h1>Liste d'amis</h1>
@@ -79,17 +41,58 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach($amis as $ami):?>
-                    <tr>
-                        <?= "<td>".$ami->user_name."</td>" ?>
-                        <td><button type="submit">Supprimer</button></td>
-                    </tr>
-                    <?php endforeach ?>
-                    
-                    </tr>
+                        
+                <!-- Liste d'amis avec possibilité de supprimer -->
+                <?php 
+                    foreach($amis as $ami){
+                        if($ami->user_id != $_SESSION['userId']){
+                            echo "<tr><td>". $ami->user_name."</td><td><a href='?page=amis&delete=".$ami->friendship_id."'>Supprimer l'ami(e)</a></td></tr>";
+                            $userCheck[] = $ami->user_id;
+                        } 
+                    }
+                ?>
+                
                 </tbody>
             </table>
         </form>
+
+        <section class="recherche-amis">
+            <h1>Recherche utilisateurs</h1>
+            <form method="POST">
+                <input type="search" name="search-user" id="" placeholder="rechercher un joueur">
+                <button type="submit" name="valid-search-user"><img src="images/icon-search.png" alt="search-icon"></button>
+            </form>
+            <form action="POST">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Utilisateur</th>
+                        <th>Ajouter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- data recup from search request -->
+                    <?php 
+                        if(isset($_POST["valid-search-user"]))
+                        {
+                            foreach($resultSearch as $sch){ 
+                                if (in_array($sch->user_id,$userCheck)) {
+                                    if ($sch->user_id == $_SESSION['userId'])
+                                    echo "<tr><td>". $sch->user_name."</td><td class='userResult'>Vous</tr>";
+                                    else {
+                                        echo "<tr><td>". $sch->user_name."</td><td>Ami(e)</tr>"; 
+                                    }
+                                } else { 
+                                    echo "<tr><td>". $sch->user_name."</td>
+                                    <td><a href='?page=amis&ajouter=".$sch->user_id."'>Ajouter en ami</a></td>
+                                    </tr>";
+                                }
+                            }    
+                        }
+                    ?> 
+                </tbody>
+            </table></form>
+        </section>
 
     </main>
 

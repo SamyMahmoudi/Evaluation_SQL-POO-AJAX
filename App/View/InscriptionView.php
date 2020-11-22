@@ -19,7 +19,7 @@
                 <a href="?page=inscription">Inscription</a>
             </li>
             <li>
-                <a href="?page=connexion">Connexion</a>
+                <a href="?page=Connexion">Connexion</a>
             </li>
         </ul>
     </nav>

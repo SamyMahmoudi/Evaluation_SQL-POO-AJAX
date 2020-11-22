@@ -30,23 +30,23 @@
         </nav>
     </header>
 
-    <main>
+    <main class="main-profil">
         <section id="profil-section">
 
             <div class="container-profil">
                 <h1>Profil</h1>
 
-                <!-- Données actuelles de l'utilisateur -->
+                <!-- Données actuelles de l'utilisateur à récuperer dans la $_SESSION -->
 
                 <?php foreach($profil as $dataUser):?>
                 <div class="profil-data">
-                    <h2><?= htmlspecialchars($dataUser->user_name) ?></h2>
+                    <h2><span>Nom :</span>  <?= htmlspecialchars($dataUser->user_name) ?></h2>
                 </div>
                 <div class="profil-data">
-                    <h2><?= htmlspecialchars($dataUser->user_mail) ?></h2>
+                    <h2><span>Mail : </span> <?= htmlspecialchars($dataUser->user_mail) ?></h2>
                 </div>
                 <div class="profil-data">
-                    <h2><?= htmlspecialchars($dataUser->user_password)?></h2>
+                    <h2><span> Password : </span><?= htmlspecialchars($dataUser->user_password)?></h2>
                 </div>
                 <?php endforeach ?>
             </div>
@@ -61,13 +61,13 @@
                     <input type="submit" value="Valider" name="update-user_name">
                 </div>
                 <div class="modif-tool">
-                    <label for="">Nouvelle addresse mail</label>
-                    <input type="email" name="new-user_mail" maxlength="20" id="" placeholder="Nouvelle addresse mail">
+                    <label for="">Nouvelle adresse mail</label>
+                    <input type="email" name="new-user_mail" maxlength="20" id="" placeholder="Nouvelle adresse mail">
                     <input type="submit" value="Valider" name="update-user_mail">
                 </div>
-                <div class="modif-tool">
-                    <label for="">Nouveau mot de passe</label>
-                    <input type="password" name="new-user_password" maxlength="20" id="" placeholder="Nouveau mot de passe">
+                <div class="modif-tool pass-modif">
+                    <input type="password" name="new-user_password" maxlength="20" id="new-user_password" placeholder="Nouveau mot de passe">
+                    <input type="password" name="confirm_new-user_password" maxlength="20" id="confirm_new-user_password" placeholder="confirmer nouveau mdp">
                     <input type="submit" value="Valider" name="update-user_password">
                 </div>
             </form>

@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 use App\Model\ConnexionModel;
-session_start();
+
 
 class ConnexionController {
 
@@ -13,11 +13,7 @@ class ConnexionController {
 
     public function Connexion()
     {
-     
-
-      $this->model->Searchconnexion();
-      
+      $this->model->Searchconnexion(); 
       require ROOT."/App/View/ConnexionView.php";
-
     }
 }
