@@ -83,3 +83,32 @@
     background-color: rgb(96, 40, 40);
     color: white;
 }
+
+
+#erreur{
+    position: fixed;
+    left: 38.5%;
+    top: 40%;
+    width: 350px;
+    height: 220px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    z-index: 2;
+    flex-direction: column;
+}
+#erreur button{
+    margin-top: 25px;
+    width: 70px;
+    text-align: center;
+}
+#fond{
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.308);
+}
