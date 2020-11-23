@@ -5,6 +5,8 @@ use App\Model\ProfilModel;
 
 class ProfilController {
 
+    public $model;
+
     public function __construct()
     {
        $this->model = new ProfilModel();
@@ -12,12 +14,20 @@ class ProfilController {
 
     public function render()
     {
-      // recupere donnees utilisateur
-      $profil = $this->model->query("SELECT user_name,user_mail,user_password FROM t_users WHERE user_id = 1");
+      // verifie que l'utilisateur s'est bien connecté
+      if ($_SESSION['connect'] == false) {
+        header("Location:index.php?page=Connexion");
+        }
+
+      // recup data from user  
+      $profil = $this->model->recupProfil();
+
       // modification données
       $this->model->updateUserData();
+      
       // template page profil
       require ROOT."/App/View/ProfilView.php";
+      
 
     }
 }

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -7,29 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page connexion</title>
     <link  href="css/connexion.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/inscription.css">
+    <link  href="css/inscription.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<header class="header-accueil">
-    <nav class="nav-form">
+    <header>
+        <nav class="nav-form">
             <ul>
                 <li>
-                    <a href="index.php?">Accueil</a>
+                    <a href="?">Accueil</a>
                 </li>
                 <li>
-                    <a href="index.php?page=inscription">Inscription</a>
+                    <a href="?page=inscription">Inscription</a>
                 </li>
                 <li>
-                    <a href="index.php?page=Connexion">Connexion</a>
+                    <a href="?page=Connexion">Connexion</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <div id="fond">
-        <h1>
-            Connexion
-        </h1>
+        <h1>Connexion</h1>
         <form  method="POST" id="connexion">
             <label for="Email">Email:</label>
             <input type="text" id="username" name="email" placeholder="email"><br>

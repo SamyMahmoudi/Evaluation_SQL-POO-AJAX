@@ -14,7 +14,7 @@ class ConnexionModel extends Database{
     {
         $email = htmlspecialchars($_POST['email']);
         $password = htmlspecialchars($_POST['password']);
-        $check =  $this->pdo->prepare('SELECT user_name, user_mail, user_password FROM t_users WHERE user_mail = ?');
+        $check =  $this->pdo->prepare('SELECT * FROM t_users WHERE user_mail = ?');
         
         $check->execute(array($email));
         $data = $check->fetch();
@@ -26,14 +26,18 @@ class ConnexionModel extends Database{
            // {
                // $password = hash('sha256', $password);
                 if($data['user_password'] === $password)
-                {
-                    $_SESSION['user'] = $data['user_mail'];
-                    $_SESSION['user'] = true;
+                {   
+                    $_SESSION['userId'] = $data['user_id'];
+                    $_SESSION['userName'] = $data['user_name'];
+                    $_SESSION['connect'] = true;
+
                     header('Location: index.php?page=profil');
                     die();
-                }else header('Location:index.php?page=Connexion_login_err_password');
+                }else 
+                header('Location:index.php?page=Connexion&login_err_password');
+                $_SESSION['connect'] = false;
            // }else header('Location: ConnexionView?login_err=email');
-        }else header('Location:index.php?page=Connexion_login_err_already');
+        }else header('Location:index.php?page=Connexion&login_err_already');
     }  
 
     }  
