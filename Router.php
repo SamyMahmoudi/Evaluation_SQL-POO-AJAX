@@ -40,6 +40,10 @@ if(array_key_exists("page",$_GET))
             $controller = new CreaSondController();
             $controller->CreaSond();
             break;
+            case 'Brouillon'  :
+              require "App\View\SondagebrouillonView.php" ;
+                break;
+            
             
             default:
             $controller = new  AccueilController();
