@@ -34,10 +34,10 @@ class ConnexionModel extends Database{
                     header('Location: index.php?page=profil');
                     die();
                 }else 
-                header('Location:index.php?page=Connexion_login_err_password');
+                header('Location:index.php?page=Connexion&login_err_password');
                 $_SESSION['connect'] = false;
            // }else header('Location: ConnexionView?login_err=email');
-        }else header('Location:index.php?page=Connexion_login_err_already');
+        }else header('Location:index.php?page=Connexion&login_err_already');
     }  
 
     }  
