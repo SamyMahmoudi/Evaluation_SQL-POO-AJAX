@@ -24,15 +24,15 @@
         </nav>
     </header>
     <main>
-        <div id="fond">
-        <h1>Connexion</h1>
-        <form  method="POST" id="connexion">
-            <label for="Email">Email:</label>
-            <input type="text" id="username" name="email" placeholder="email"><br>
-            <label for="password">Mot de passe: </label>
-            <input type="password" id="mdp" name="password" placeholder="votre mot de passe"> <br><br>
-            <button type="submit" id="envoyer" name="submit">Connexion</button>
-        </form>
+        <div>
+            <h1>Connexion</h1>
+            <form  method="POST" id="connexion">
+                <label for="Email">Email:</label>
+                <input type="text" id="username" name="email" placeholder="email"><br>
+                <label for="password">Mot de passe: </label>
+                <input type="password" id="mdp" name="password" placeholder="votre mot de passe"> <br><br>
+                <button type="submit" id="envoyer" name="submit">Connexion</button>
+            </form>
         </div>
     </main>
 </body>

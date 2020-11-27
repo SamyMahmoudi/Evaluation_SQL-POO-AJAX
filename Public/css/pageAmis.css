@@ -1,4 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 10vh;
+    width: 100%;
+    background-color: darkgoldenrod;
+
+}
+
+header nav ul {
+    list-style: none;
+    margin: auto;
+    width: calc(100% - 200px);
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.nav-user li {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.nav-user li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+.nav-user li a:hover {
+    color: black;
+    border-bottom: solid black 2px;
+}
+
+
 .main-amis {
+    background-color: black;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -9,7 +50,7 @@
     min-height: 90vh;
     display: flex;
     flex-direction: column;
-    background-color: rgb(64, 151, 238);
+    background-color: #accbe1;
 }
 
 .recherche-amis h1 {
@@ -95,7 +136,7 @@
     flex-direction: column;
     min-height: 90vh;
     width: 40vw;
-    background-color: rgb(245, 140, 101);
+    background-color:#cee5f2;
 }
 
 .listing-amis h1 {
@@ -141,4 +182,34 @@
     width: 80%;
     padding: 8px 12px;
     cursor: pointer;
+}
+
+.section-amisConnectes{
+    width: 18%;
+    min-height: 90vh;
+    background-color: #7c98b3;
+}
+
+.section-amisConnectes h1{
+    text-align: center;
+    padding-top: 30px;
+    font-size: 36px;
+}
+
+.section-amisConnectes ul {
+    list-style: none;
+    width: 80%;
+    margin: auto;
+    padding-top: 40px;
+}
+
+.section-amisConnectes ul li {
+    font-size: 20px;
+    padding-top: 20px;
+    color: white;
+}
+
+.btnConnect{
+    width: 10px;
+    padding-right: 6px;
 }
