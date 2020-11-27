@@ -1,0 +1,66 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav-form {
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(96, 40, 40);
+}
+
+.nav-form ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-form ul li {
+    padding: 0px 20px;
+}
+
+.nav-form ul li a {
+    text-decoration: none;
+    font-size: 28px;
+    color: white;
+}
+
+.nav-form ul li a:hover {
+    color: rgb(205, 253, 156);
+    border-bottom: 2px solid rgb(205, 253, 156);
+}
+#Sondages{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+a{
+    width: auto;
+    text-decoration: none;
+    margin-right: 15px;
+}
+h3{
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+hr{
+    width: 270px;
+    background-color: black;
+    margin-bottom: 35px;
+}
+section{
+    margin-left: 60px;
+    margin-right: 60px;
+}
+article{
+    width: 150px;
+    background-color: grey;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 15px;
+}

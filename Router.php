@@ -6,6 +6,7 @@ use App\Controller\AccueilController;
 use App\Controller\ConnexionController;
 use App\Controller\InscriptionController;
 use App\Controller\CreaSondController;
+use App\Controller\AccueilSondController;
 
 if(array_key_exists("page",$_GET))
 {
@@ -39,6 +40,10 @@ if(array_key_exists("page",$_GET))
         case 'CreaSondage'  :
             $controller = new CreaSondController();
             $controller->CreaSond();
+            break;
+        case 'AccueilSondage'  :
+            $controller = new AccueilSondController();
+            $controller->render();
             break;
         case 'Brouillon'  :
             require "App\View\SondagebrouillonView.php" ;
