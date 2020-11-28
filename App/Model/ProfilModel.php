@@ -10,6 +10,16 @@ class ProfilModel extends Database{
         return $this->query("SELECT * FROM t_users WHERE user_id =".$_SESSION['userId']);
     }
 
+    // récupère sondages de l'utilisateur
+    public function recupSondUser(){
+        $recherche =$this->pdo->prepare("SELECT * FROM t_users INNER JOIN t_sondages ON t_users.user_id=t_sondages.user_id WHERE t_sondages.user_id = :user");
+        $recherche->execute([
+            ":user" => $_SESSION['userId']
+        ]);
+        $foundUser = $recherche->fetchAll(\PDO::FETCH_OBJ);
+        return $foundUser;
+    }
+
     public function updateUserData()
     {   
         // changement de nom d'utilisateur
