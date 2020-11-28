@@ -29,8 +29,9 @@ class InscriptionModel extends Database{
                     if(!empty($_POST['username']) AND !empty($_POST['email']) AND !empty($_POST['mdpasse'])){
                         //Verifie si les mots de passes sont identiques
                         if($_POST['mdpasse'] == $_POST['confirm']){
-                            $requete = $this->pdo->prepare("INSERT INTO t_users(user_name, user_mail, user_password,user_isConnected) VALUES(?,?,?,0)");
+                            $requete = $this->pdo->prepare("INSERT INTO t_users(user_name, user_mail, user_password) VALUES(?,?,?)");
                             $requete->execute(array($username, $email, $mdp));
+                            header("location:index.php?page=connexion");
                         }
                         else{
                             echo '<div id="fond"><div id="erreur"><span>mot de passe mal écrit</span><button id="erreurBouton">OK</button></div>';
@@ -39,7 +40,7 @@ class InscriptionModel extends Database{
                         echo '<div id="fond"><div id="erreur"><span>champs non remplis</span><button id="erreurBouton">OK</button></div></div>';
                     }
                 }else{
-                    echo '<div id="fond"><div id="erreur"><span>Mail déjà existant</span><button id="erreurBouton">OK</button></div></div';
+                    echo '<div id="fond"><div id="erreur"><span>Mail déjà existant ou non valide</span><button id="erreurBouton">OK</button></div></div';
                 }
             }else{
                 echo '<div id="fond"><div id="erreur"><span>Pseudo déjà existant</span><button id="erreurBouton">OK</button></div></div>';

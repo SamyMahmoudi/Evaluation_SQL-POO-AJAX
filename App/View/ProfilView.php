@@ -14,10 +14,10 @@
         <nav class="nav-user">
             <ul>
                 <li>
-                    <a href="">Actualités</a>
+                    <a href="index.php?page=accueilSondage">Actualités</a>
                 </li>
                 <li>
-                    <a href="">Sondage</a>
+                    <a href="index.php?page=creaSondage">Créer un sondage</a>
                 </li>
                 <li>
                     <a href="index.php?page=amis">Amis</a>

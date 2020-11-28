@@ -25,7 +25,7 @@ if(array_key_exists("page",$_GET))
             $controller = new InscriptionController();
             $controller->inscrire();
             break;
-        case 'Connexion'  :
+        case 'connexion'  :
             $controller = new ConnexionController();
             $controller->Connexion();
             break;
@@ -37,11 +37,11 @@ if(array_key_exists("page",$_GET))
             $controller = new ConnexionController();
             $controller->Connexion();
             break;
-        case 'CreaSondage'  :
+        case 'creaSondage'  :
             $controller = new CreaSondController();
             $controller->CreaSond();
             break;
-        case 'AccueilSondage'  :
+        case 'accueilSondage'  :
             $controller = new AccueilSondController();
             $controller->render();
             break;

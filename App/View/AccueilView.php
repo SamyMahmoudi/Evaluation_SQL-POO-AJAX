@@ -19,7 +19,7 @@
                     <a href="index.php?page=inscription">Inscription</a>
                 </li>
                 <li>
-                    <a href="index.php?page=Connexion">Connexion</a>
+                    <a href="index.php?page=connexion">Connexion</a>
                 </li>
             </ul>
         </nav>
