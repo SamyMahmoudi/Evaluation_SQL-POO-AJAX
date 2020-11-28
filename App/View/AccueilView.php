@@ -5,25 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/accueil.css">
 </head>
 
 <body>
-    <header class="header-accueil">
-        <nav class="nav-accueil">
-            <ul>
-                <li>
-                    <a href="index.php?page=">Accueil</a>
-                </li>
-                <li>
-                    <a href="index.php?page=inscription">Inscription</a>
-                </li>
-                <li>
-                    <a href="index.php?page=connexion">Connexion</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php include ("inc/headerPublic.php") ?>
+    <main class="main-accueil"></main>
 </body>
 
 </html>

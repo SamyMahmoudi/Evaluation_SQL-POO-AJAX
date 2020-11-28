@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    height: 10vh;
+    
+}
+
+/*************** HEADER PUBLIC ******************/
+
+.nav-accueil {
+    width: 100%;
+    height: 20vh;
+    background-color: rgba(0, 106, 255, 0.3);
+}
+
+.nav-accueil ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-accueil ul li {
+    padding: 0px 20px;
+}
+
+.nav-accueil ul li a {
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+}
+
+.nav-accueil ul li a:hover {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+/*************** HEADER USER ******************/
+
+.header-user {
+    height: 10vh;
+    width: 100%;
+    background-color: darkgoldenrod;
+    
+}
+.header-user-profil {
+    position: fixed;
+}
+.header-user nav ul {
+    list-style: none;
+    margin: auto;
+    width: calc(100% - 200px);
+    display: flex;
+    justify-content: space-between;
+    
+}
+.main-profil {
+    height: 200vh;
+}
+.nav-user li {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.nav-user li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+.nav-user li a:hover {
+    color: black;
+    border-bottom: solid black 2px;
+}

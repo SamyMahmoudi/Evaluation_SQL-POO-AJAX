@@ -3,41 +3,6 @@
     padding: 0;
 }
 
-header {
-    height: 10vh;
-    width: 100%;
-    background-color: darkgoldenrod;
-    position: fixed;
-}
-
-header nav ul {
-    list-style: none;
-    margin: auto;
-    width: calc(100% - 200px);
-    display: flex;
-    justify-content: space-between;
-    
-}
-.main-profil {
-    height: 200vh;
-}
-.nav-user li {
-    height: 10vh;
-    display: flex;
-    align-items: center;
-}
-
-.nav-user li a {
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-}
-
-.nav-user li a:hover {
-    color: black;
-    border-bottom: solid black 2px;
-}
-
 #profil-section {
     background-color: #7c98b3;
     width: 30vw;

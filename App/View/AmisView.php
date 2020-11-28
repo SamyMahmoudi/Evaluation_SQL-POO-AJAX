@@ -5,34 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/pageAmis.css">
 </head>
 
 <body>
-    <header>
-        <nav class="nav-user">
-            <ul>
-                <li>
-                    <a href="index.php?page=accueilSondage">Actualités</a>
-                </li>
-                <li>
-                    <a href="index.php?page=creaSondage">Sondage</a>
-                </li>
-                <li>
-                    <a href="index.php?page=amis">Amis</a>
-                </li>                
-                <li>
-                    <a href="index.php?page=profil">Profil</a>
-                </li>
-                <li>
-                    <a href="#">Déconnexion</a>
-                </li>
-            </ul>
-        </nav>
+    <header class="header-user">
+        <?php include("inc/headerUser.php") ?>
     </header>
 
     <main class="main-amis">
-
         <section class="listing-amis" method="POST">
             <h1>Liste d'amis</h1>
             <table>
@@ -53,7 +35,6 @@
                             } 
                         }
                     ?>
-
                 </tbody>
             </table>
         </section>
