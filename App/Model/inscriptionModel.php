@@ -29,7 +29,7 @@ class InscriptionModel extends Database{
                     if(!empty($_POST['username']) AND !empty($_POST['email']) AND !empty($_POST['mdpasse'])){
                         //Verifie si les mots de passes sont identiques
                         if($_POST['mdpasse'] == $_POST['confirm']){
-                            $requete = $this->pdo->prepare("INSERT INTO t_users(user_name, user_mail, user_password) VALUES(?,?,?)");
+                            $requete = $this->pdo->prepare("INSERT INTO t_users(user_name, user_mail, user_password,user_isConnected) VALUES(?,?,?,0)");
                             $requete->execute(array($username, $email, $mdp));
                         }
                         else{
