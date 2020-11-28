@@ -8,6 +8,7 @@ header {
     width: 100%;
     background-color: darkgoldenrod;
     position: fixed;
+    top: 0;
 }
 
 header nav ul {
@@ -127,4 +128,38 @@ header nav ul {
 
 .profil-data span {
     color: black;
+}
+#Sondages{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: left;
+
+}
+#Sondages a{
+    width: auto;
+    text-decoration: none;
+    margin-right: 55px;
+}
+#sondageUser h3{
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+#sondageUser hr{
+    width: 270px;
+    background-color: black;
+    margin-bottom: 35px;
+}
+#sondageUser{
+    margin-left: 32vw;
+    margin-top: 12vh;
+}
+#Sondages article{
+    width: 100%;
+    background-color: grey;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 15px;
 }

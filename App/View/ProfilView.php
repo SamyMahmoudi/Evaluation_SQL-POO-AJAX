@@ -48,7 +48,7 @@
                     <h2><span>Mail : </span> <?= htmlspecialchars($dataUser->user_mail) ?></h2>
                 </div>
                 <div class="profil-data">
-                    <h2><span> Password : </span><?= htmlspecialchars($dataUser->user_password)?></h2>
+                    <h2><span> Password : </span>***</h2>
                 </div>
                 <?php endforeach ?>
             </div>
@@ -74,6 +74,23 @@
                 </form>
             </div>
 
+        </section>
+        <section id="sondageUser">
+            <h3>Vos sondages en cours</h3>
+            <hr align="left">
+            <div id="Sondages">
+                    <?php foreach($sondages as $sondage):
+                        { ?>
+                        <a href="index.php?page=sondage" >
+                        <article>
+                        <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
+                        <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
+                        <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
+                        </article>
+                        </a>
+                        <?php }endforeach  ?>
+                
+            </div>
         </section>
     </main>
 

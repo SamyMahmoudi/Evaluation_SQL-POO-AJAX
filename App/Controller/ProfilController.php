@@ -18,6 +18,8 @@ class ProfilController {
       if ($_SESSION['connect'] == false) {
         header("Location:index.php?page=Connexion");
         }
+      // recup sondages from user
+      $sondages = $this->model->recupSondUser();
 
       // recup data from user  
       $profil = $this->model->recupProfil();
