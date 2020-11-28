@@ -13,7 +13,8 @@ class AccueilSondController {
 
     public function render()
     {
-      $sondages = $this->model->recupSond();
+      $sondagesFriends = $this->model->recupSondFriends();
+      $sondagesUser = $this->model->recupSondUser();
 
       require ROOT."/App/View/AccueilSondView.php";
 

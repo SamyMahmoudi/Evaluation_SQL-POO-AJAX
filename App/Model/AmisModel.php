@@ -19,7 +19,7 @@ class AmisModel extends Database{
 
     public function ListFriends()
     {
-        $listFriends = $this->pdo->prepare("SELECT * FROM t_users INNER JOIN t_sondage INNER JOIN t_friends WHERE (friend_id_one = user_id OR friend_id_two = user_id) AND (friend_id_one = :user_one OR friend_id_two = :user_two)");
+        $listFriends = $this->pdo->prepare("SELECT * FROM t_users INNER JOIN t_friends WHERE (friend_id_one = user_id OR friend_id_two = user_id) AND (friend_id_one = :user_one OR friend_id_two = :user_two)");
         $listFriends->execute([
             ":user_one" => $_SESSION['userId'],
             ":user_two" => $_SESSION['userId']

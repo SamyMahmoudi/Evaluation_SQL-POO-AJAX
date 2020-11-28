@@ -104,13 +104,13 @@
         <h1>Amis connecté(e)s</h1>
 
         <ul>
-            <?php 
+             <?php 
                 foreach($amis as $ami){
                     if($ami->user_id != $_SESSION['userId'] AND $ami->user_isConnected == 1){
                         echo "<li> <img class='btnConnect' src='images/btnConnect.png'>". $ami->user_name."</li>";
                         $userCheck[] = $ami->user_id;
-                    }                        
-                }
+                   }                        
+               }
             ?>
         </ul>
 

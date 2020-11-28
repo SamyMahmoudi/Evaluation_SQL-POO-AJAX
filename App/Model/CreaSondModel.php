@@ -13,8 +13,8 @@ class CreaSondModel extends Database{
             $titre = $_POST["titre"];
             $reponse = $_POST["reponse".$i];
             if(!empty($titre)){
-                $requete = $this->pdo->prepare("INSERT INTO t_sondages(sondage_titre, sondage_temps) VALUES(?, ?)");
-                $requete->execute(array($titre, $temps));
+                $requete = $this->pdo->prepare("INSERT INTO t_sondages(sondage_titre, sondage_temps, user_id) VALUES(?, ?, ?)");
+                $requete->execute(array($titre, $temps, $_SESSION['userId']));
                 if($requete){
                 $id = $this->pdo->prepare("SELECT sondage_id FROM t_sondages WHERE sondage_titre = ?");
                 $id->execute(array($titre));
@@ -22,7 +22,6 @@ class CreaSondModel extends Database{
                 foreach ($result as $test){
                     $luck = $test['sondage_id'];
                 }
-                echo($luck);
                
              while(isset($_POST["reponse".$i])){
                 $requete2 = $this->pdo->prepare("INSERT INTO t_reponses(sondage_id, reponse_titre) VALUES (?, ?)");

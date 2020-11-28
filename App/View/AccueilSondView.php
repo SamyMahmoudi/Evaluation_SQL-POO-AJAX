@@ -25,9 +25,10 @@
             <h3>Les sondages de vos ami(e)s</h3>
             <hr align="left">
             <div id="Sondages">
-                    <?php foreach($sondages as $sondage):
+                    <?php foreach($sondagesFriends as $sondage):
+                        $idLien = password_hash($sondage->sondage_id, PASSWORD_DEFAULT);
                         if($sondage->user_id !=  $_SESSION['userId']){ ?>
-                        <a href="index.php?page=sondage" >
+                        <a href="index.php?page=sondage?<?=$idLien?>">
                         <article>
                         <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
                         <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
@@ -42,8 +43,8 @@
             <h3>Vos sondages terminés</h3>
             <hr align="left">
             <div id="Sondages">
-                    <?php foreach($sondages as $sondage):
-                        if($sondage->user_id ==  $_SESSION['userId'] AND $sondage->sondage_statut == "termine"){ ?>
+                    <?php foreach($sondagesUser as $sondage):
+                        { ?>
                         <a href="index.php?page=sondage" >
                         <article>
                         <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
