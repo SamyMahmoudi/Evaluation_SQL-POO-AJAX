@@ -2,30 +2,12 @@
     margin: 0;
     padding: 0;
 }
-@font-face{
-    font-family: "Poppins";
-    src: url(font/Poppins-Regular.ttf);
-}
-body{
-    font-family: "Poppins";
-}
-header{
-    height: 120px;
-    padding-top: 50px;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
-    background-color: grey;
-    color: white;
-}
+
+
 h1{
     text-align: center;
 }
-ul{
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
-    margin-top: 50px;
-}
+
 footer{
     height: 70px;
     background-color: grey;
@@ -42,10 +24,6 @@ footer p{
 main{
     margin-bottom: 120px;
 }
-
-
-
-
 
 section{
     width: 85%;

@@ -2,35 +2,7 @@
     margin: 0;
     padding: 0;
 }
-.nav-form {
-    height: 10vh;
-    width: 100%;
-    background-color: rgb(96, 40, 40);
-}
 
-.nav-form ul {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-}
-
-.nav-form ul li {
-    padding: 0px 20px;
-}
-
-.nav-form ul li a {
-    text-decoration: none;
-    font-size: 28px;
-    color: white;
-}
-
-.nav-form ul li a:hover {
-    color: rgb(205, 253, 156);
-    border-bottom: 2px solid rgb(205, 253, 156);
-}
 #Sondages{
     display: flex;
     justify-content: space-around;
