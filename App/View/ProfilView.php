@@ -5,14 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/profil.css">
 </head>
 
 <body>
 
-    <header class="header-user header-user-profil">
-        <?php include("inc/headerUser.php") ?>
+    <header>
+        <nav class="nav-user">
+            <ul>
+                <li>
+                    <a href="index.php?page=accueilSondage">Actualités</a>
+                </li>
+                <li>
+                    <a href="index.php?page=creaSondage">Créer un sondage</a>
+                </li>
+                <li>
+                    <a href="index.php?page=amis">Amis</a>
+                </li>                
+                <li>
+                    <a href="index.php?page=profil">Profil</a>
+                </li>
+                <li>
+                    <a href="#">Déconnexion</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main class="main-profil">
@@ -21,11 +38,9 @@
             <div class="container-profil">
                 <h1>Profil</h1>
 
-                
+                <!-- Données actuelles de l'utilisateur à récuperer dans la $_SESSION -->
 
-                <?php
-                // Données actuelles de l'utilisateur à récuperer dans la $_SESSION
-                foreach($profil as $dataUser):?>
+                <?php foreach($profil as $dataUser):?>
                 <div class="profil-data">
                     <h2><span>Nom :</span>  <?= htmlspecialchars($dataUser->user_name) ?></h2>
                 </div>

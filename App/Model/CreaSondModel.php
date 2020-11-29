@@ -12,7 +12,7 @@ class CreaSondModel extends Database{
             $temps = $_POST["temps"];
             $titre = $_POST["titre"];
             $reponse = $_POST["reponse".$i];
-            if(!empty($titre)){
+            if(!empty($titre) AND !empty($reponse)){
                 $requete = $this->pdo->prepare("INSERT INTO t_sondages(sondage_titre, sondage_temps, user_id) VALUES(?, ?, ?)");
                 $requete->execute(array($titre, $temps, $_SESSION['userId']));
                 if($requete){
