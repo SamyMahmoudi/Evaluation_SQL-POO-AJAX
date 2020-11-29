@@ -1,12 +1,13 @@
 <?php 
 
+use App\Controller\SondageController;
 use App\Controller\AmisController;
 use App\Controller\ProfilController;
 use App\Controller\AccueilController;
-use App\Controller\ConnexionController;
-use App\Controller\InscriptionController;
 use App\Controller\CreaSondController;
+use App\Controller\ConnexionController;
 use App\Controller\AccueilSondController;
+use App\Controller\InscriptionController;
 
 if(array_key_exists("page",$_GET))
 {
@@ -45,9 +46,10 @@ if(array_key_exists("page",$_GET))
             $controller = new AccueilSondController();
             $controller->render();
             break;
-        case 'Brouillon'  :
-            require "App\View\SondagebrouillonView.php" ;
-            break;
+            case 'sondage'  :
+                $controller = new SondageController();
+                $controller->render();
+                break;
             
             
             default:

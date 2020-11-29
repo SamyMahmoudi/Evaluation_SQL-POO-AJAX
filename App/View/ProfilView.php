@@ -5,31 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil</title>
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/profil.css">
 </head>
 
 <body>
 
-    <header>
-        <nav class="nav-user">
-            <ul>
-                <li>
-                    <a href="index.php?page=accueilSondage">Actualités</a>
-                </li>
-                <li>
-                    <a href="index.php?page=creaSondage">Créer un sondage</a>
-                </li>
-                <li>
-                    <a href="index.php?page=amis">Amis</a>
-                </li>                
-                <li>
-                    <a href="index.php?page=profil">Profil</a>
-                </li>
-                <li>
-                    <a href="#">Déconnexion</a>
-                </li>
-            </ul>
-        </nav>
+    <header class="header-user header-user-profil">
+        <?php include('inc/headerUser.php'); ?>
     </header>
 
     <main class="main-profil">
@@ -81,7 +64,7 @@
             <div id="Sondages">
                     <?php foreach($sondages as $sondage):
                         { ?>
-                        <a href="index.php?page=sondage" >
+                        <a href="index.php?page=sondage&c=<?= htmlspecialchars($sondage->sondage_code) ?> ">
                         <article>
                         <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
                         <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>

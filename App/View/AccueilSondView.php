@@ -19,9 +19,9 @@
             <hr align="left">
             <div id="Sondages">
                 <?php foreach($sondagesFriends as $sondage):
-                        $idLien = password_hash($sondage->sondage_id, PASSWORD_DEFAULT);
+                        
                         if($sondage->user_id !=  $_SESSION['userId']){ ?>
-                        <a href="index.php?page=sondage?<?=$idLien?>">
+                        <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
                             <article>
                                 <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
                                 <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
@@ -38,7 +38,7 @@
             <div id="Sondages">
                 <?php foreach($sondagesUser as $sondage):
                         { ?>
-                <a href="index.php?page=sondage">
+                <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
                     <article>
                         <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
                         <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
