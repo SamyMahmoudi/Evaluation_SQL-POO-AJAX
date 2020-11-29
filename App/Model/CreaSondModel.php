@@ -11,10 +11,11 @@ class CreaSondModel extends Database{
             $i = 1;
             $temps = $_POST["temps"];
             $titre = $_POST["titre"];
+            $titrehash = password_hash($titre, PASSWORD_DEFAULT);
             $reponse = $_POST["reponse".$i];
-            if(!empty($titre)){
-                $requete = $this->pdo->prepare("INSERT INTO t_sondages(sondage_titre, sondage_temps, user_id) VALUES(?, ?, ?)");
-                $requete->execute(array($titre, $temps, $_SESSION['userId']));
+            if(!empty($titre) AND !empty($reponse)){
+                $requete = $this->pdo->prepare("INSERT INTO t_sondages(sondage_titre, sondage_temps, user_id, sondage_code) VALUES(?, ?, ?, ?)");
+                $requete->execute(array($titre, $temps, $_SESSION['userId'], $titrehash));
                 if($requete){
                 $id = $this->pdo->prepare("SELECT sondage_id FROM t_sondages WHERE sondage_titre = ?");
                 $id->execute(array($titre));
