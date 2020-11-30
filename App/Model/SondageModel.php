@@ -36,4 +36,21 @@ class SondageModel extends Database{
         $result = $listFriends->fetchAll(\PDO::FETCH_OBJ);
         return $result;
     }
+
+    public function repUsers(){
+        if(isset($_POST['envoiRep']) AND !empty($_POST['reponse']))
+        {
+            $stockRep = $this->pdo->prepare("INSERT INTO t_usersReponses(user_id,sondage_code,reponse_titre) VALUES (?,?,?)");
+            $stockRep->execute(array(
+                $_SESSION['userId'],
+                $_GET['c'],
+                $_POST['reponse'])
+            );
+            $sdg = $this->pdo->prepare("SELECT sondage_id FROM t_sondages WHERE sondage_code = ?");
+            $sdg->execute(array($_GET['c']));
+            $sondage_id = $sdg->fetch(\PDO::FETCH_ASSOC);
+            $choix = $this->pdo->prepare("UPDATE t_reponses SET reponse_score = reponse_score+1 WHERE sondage_id = ? AND reponse_titre = ?");
+            $choix->execute(array($sondage_id['sondage_id'],$_POST['reponse']));
+        }
+    }
 }

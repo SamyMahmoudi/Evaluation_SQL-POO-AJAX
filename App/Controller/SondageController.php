@@ -17,6 +17,7 @@ class SondageController {
      $sondages = $this->model->recupSondage();
      $reponses = $this->model->recupReponse();
      $amis = $this->model->emailing();
+     $this->model->repUsers();
 
 
       require ROOT."/App/View/SondageView.php";

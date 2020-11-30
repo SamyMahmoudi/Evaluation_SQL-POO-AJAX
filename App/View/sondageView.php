@@ -18,16 +18,16 @@
                 echo '<h1>'.$sondage->sondage_titre.'</h1>';
             }
         ?>
-        <ul>
-            <?php
-                // $nextTime =time() +(15*60)  ;
-                // echo date("d-m-Y H:i:s")."<br>";
-                foreach($reponses as $reponse){
-                    echo '<li><input type="radio" name="reponse">'.$reponse->reponse_titre.'</li>';    
-                }
-            ?>
-        </ul>
-
+        <form method="POST">
+            <ul>
+                <?php
+                    foreach($reponses as $reponse){
+                        echo '<li><input type="radio" name="reponse" value="'.$reponse->reponse_titre.'">'.$reponse->reponse_titre.'</li>';    
+                    }
+                ?>
+                <input type="submit" name="envoiRep" value="Envoyer sa réponse">
+            </ul>
+        </form>
         <section class="emailing">
             <?php 
         //systeme emailing 
