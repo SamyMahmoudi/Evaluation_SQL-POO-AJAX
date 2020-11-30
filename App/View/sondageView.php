@@ -26,7 +26,7 @@
      <?php
      foreach($reponses as $reponse){
          
-        echo '<li>'.$reponse->reponse_titre.'</li>';
+        echo '<li><input type="radio" name="reponse">'.$reponse->reponse_titre.'</input></li>';
      }
      
      ?>
