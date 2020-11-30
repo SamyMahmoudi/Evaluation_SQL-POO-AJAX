@@ -14,15 +14,10 @@
     <header class="header-user header-user-profil">
         <?php include('inc/headerUser.php'); ?>
     </header>
-
     <main class="main-profil">
         <section id="profil-section">
-
             <div class="container-profil">
                 <h1>Profil</h1>
-
-                <!-- Données actuelles de l'utilisateur à récuperer dans la $_SESSION -->
-
                 <?php foreach($profil as $dataUser):?>
                 <div class="profil-data">
                     <h2><span>Nom :</span>  <?= htmlspecialchars($dataUser->user_name) ?></h2>
@@ -30,13 +25,11 @@
                 <div class="profil-data">
                     <h2><span>Mail : </span> <?= htmlspecialchars($dataUser->user_mail) ?></h2>
                 </div>
-                <div class="profil-data">
+                <!-- <div class="profil-data">
                     <h2><span> Password : </span>***</h2>
-                </div>
+                </div> -->
                 <?php endforeach ?>
             </div>
-
-            <!-- Form pour modifier les données actuelles de l'utilisateur -->
             <div class="modif-profil" >
                 <h1>Modifier le profil</h1>
                 <form class="modif-tool" method="POST">
@@ -62,21 +55,18 @@
             <h3>Vos sondages en cours</h3>
             <hr align="left">
             <div id="Sondages">
-                    <?php foreach($sondages as $sondage):
-                        { ?>
-                        <a href="index.php?page=sondage&c=<?= htmlspecialchars($sondage->sondage_code) ?> ">
-                        <article>
-                        <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
-                        <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
-                        <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
-                        </article>
+                    <?php foreach($sondages as $sondage): ?>
+                        <a href="index.php?page=sondage&em&c=<?= htmlspecialchars($sondage->sondage_code) ?>">
+                            <article>
+                                <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
+                                <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
+                                <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
+                            </article>
                         </a>
-                        <?php }endforeach  ?>
-                
+                    <?php endforeach  ?>
             </div>
         </section>
     </main>
 
 </body>
-
 </html>

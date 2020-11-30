@@ -18,9 +18,8 @@
             <h3>Les sondages de vos ami(e)s</h3>
             <hr align="left">
             <div id="Sondages">
-                <?php foreach($sondagesFriends as $sondage):
-                        
-                        if($sondage->user_id !=  $_SESSION['userId']){ ?>
+                <?php foreach($sondagesFriends as $sondage):      
+                        if($sondage->user_id !=  $_SESSION['userId']) { ?>
                         <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
                             <article>
                                 <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
@@ -28,7 +27,7 @@
                                 <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
                             </article>
                         </a>
-                <?php }endforeach  ?>
+                <?php } endforeach  ?>
 
             </div>
         </section>
@@ -36,16 +35,15 @@
             <h3>Vos sondages terminés</h3>
             <hr align="left">
             <div id="Sondages">
-                <?php foreach($sondagesUser as $sondage):
-                        { ?>
-                <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
-                    <article>
-                        <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
-                        <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
-                        <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
-                    </article>
-                </a>
-                <?php }endforeach  ?>
+                <?php foreach($sondagesUser as $sondage):?>
+                    <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
+                        <article>
+                            <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
+                            <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
+                            <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
+                        </article>
+                    </a>
+                <?php endforeach  ?>
 
             </div>
         </section>

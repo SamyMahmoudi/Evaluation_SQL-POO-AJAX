@@ -13,7 +13,7 @@
             <a href="index.php?page=profil">Profil</a>
         </li>
         <li>
-            <a href="#">Déconnexion</a>
+            <a href="?page=disconnect">Déconnexion</a>
         </li>
     </ul>
 </nav>
