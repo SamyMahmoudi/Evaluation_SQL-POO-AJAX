@@ -31,6 +31,9 @@ class SondageController {
 
       // recupere la liste d'amis de l'utilisateur
       $amis = $this->model->emailing();
+
+      $this->model->saveTchat();
+      // $this->model->refreshTchat();
      
       $already = $this->model->repUsers();
       $this->model->sdgFinish();

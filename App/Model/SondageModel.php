@@ -102,9 +102,9 @@ class SondageModel extends Database{
     }
 
     public function saveTchat(){
-        if(!empty($_POST['message'])){ // si les variables ne sont pas vides
+        if(!empty($_POST['contenu-message'])){ // si les variables ne sont pas vides
     
-            $message = ($_POST['message']);
+            $message = $_POST['contenu-message'];
     
             // puis on entre les données en base de données :
             $insertion = $this->pdo->prepare('INSERT INTO t_tchat (user_id, tchat_message, sondage_code) VALUES(?, ?, ?)');

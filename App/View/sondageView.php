@@ -102,6 +102,17 @@
                     }
     ?>
                     </section>
+                    <section id="tchat">
+                    <div>
+                        <ul id="container-messages"></ul>
+                    </div>
+                    <form method="POST">
+                        <textarea name="contenu-message" id="" cols="30" rows="10"></textarea>
+                        <input type="submit" name="envoie" placeholder="Envoyer le message">
+                    </form>
+
+
+                    </section>
     </main>
 </body>
 </html>
