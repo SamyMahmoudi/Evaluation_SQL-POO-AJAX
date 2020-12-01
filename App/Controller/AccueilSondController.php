@@ -5,7 +5,6 @@ use App\Model\AccueilSondModel;
 
 class AccueilSondController {
 
-
     public function __construct()
     {
        $this->model = new AccueilSondModel();
@@ -15,10 +14,6 @@ class AccueilSondController {
     {
       $sondagesFriends = $this->model->recupSondFriends();
       $sondagesUser = $this->model->recupSondUser();
-
       require ROOT."/App/View/AccueilSondView.php";
-
     }
-
-
 }

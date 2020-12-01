@@ -41,19 +41,23 @@ class ProfilModel extends Database{
 
         // changement d'adresse mail
         } else if (isset($_POST["update-user_mail"])) {
+                $email = $_POST["new-user_mail"];
             if (empty($_POST["new-user_mail"])) {
                 header("Location:?page=profil&erreur");
             } else {
-                $alreadyUse = $this->pdo->prepare("SELECT user_name FROM t_users WHERE user_mail = ?");
-                $alreadyUse->execute(array($_POST["new-user_mail"]));
-                $row = $alreadyUse->rowCount();
-                if ($row > 0){
-                    echo"pseudo déja pris";
-                } else {
-                $updateUserMail = $this->pdo->prepare("UPDATE t_users SET user_mail= ? WHERE user_id =".$_SESSION["userId"]);
-                $updateUserMail->execute(array($_POST["new-user_mail"]));
-                header("Location:?page=profil");
+                if (filter_var($email,FILTER_VALIDATE_EMAIL)) {
+                    $alreadyUse = $this->pdo->prepare("SELECT user_name FROM t_users WHERE user_mail = ?");
+                    $alreadyUse->execute(array($_POST["new-user_mail"]));
+                    $row = $alreadyUse->rowCount();
+                    if ($row > 0){
+                        echo"pseudo déja pris";
+                    } else {
+                    $updateUserMail = $this->pdo->prepare("UPDATE t_users SET user_mail= ? WHERE user_id =".$_SESSION["userId"]);
+                    $updateUserMail->execute(array($_POST["new-user_mail"]));
+                    header("Location:?page=profil");
+                    }
                 }
+                
             }
 
         // changement de mot de passe

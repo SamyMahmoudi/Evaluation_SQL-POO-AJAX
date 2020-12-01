@@ -33,6 +33,7 @@
             <div class="reponse">
                 <label for="">Temps pour répondre (en minutes) :</label>
                 <select name="temps" id="">
+                    <option value="3">3</option>
                     <option value="15">15</option>
                     <option value="45">45</option>
                     <option value="60">60</option>
