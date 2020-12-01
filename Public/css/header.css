@@ -5,7 +5,7 @@
 
 header {
     height: 10vh;
-    
+
 }
 
 /*************** HEADER PUBLIC ******************/
@@ -46,23 +46,27 @@ header {
     height: 10vh;
     width: 100%;
     background-color: darkgoldenrod;
-    
+
 }
+
 .header-user-profil {
     top: 0vh;
     position: fixed;
 }
+
 .header-user nav ul {
     list-style: none;
     margin: auto;
     width: calc(100% - 200px);
     display: flex;
     justify-content: space-between;
-    
+
 }
+
 .main-profil {
     height: 200vh;
 }
+
 .nav-user li {
     height: 10vh;
     display: flex;

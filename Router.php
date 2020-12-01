@@ -51,7 +51,9 @@ if(array_key_exists("page",$_GET))
             $controller = new  AccueilController();
             $controller->render();
         endswitch;
-} else {
+} 
+else 
+{
         $controller = new  AccueilController();
         $controller->render();
 }

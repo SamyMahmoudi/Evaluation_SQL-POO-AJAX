@@ -3,11 +3,21 @@ namespace App\Model;
 
 use Core\Database;
 
+/**
+ * class CreaSondModel recupere les propriétés et les methods de database grace a extends
+ */
 class CreaSondModel extends Database{
 
-    public function CreaSondage(){
+    /**
+     *  fonction qui sert à créer un sondage 
+     *
+     * @return void
+     */
+    public function CreaSondage()
+    {
 
-        if(isset($_POST["valid"])){
+        if(isset($_POST["valid"]))
+        {
             $i = 1;
             $userId = $_SESSION['userId'];
             $temps = $_POST["temps"];
@@ -15,7 +25,8 @@ class CreaSondModel extends Database{
             $titrehash = password_hash($titre, PASSWORD_DEFAULT);
             $reponse = $_POST["reponse".$i];
 
-            if(!empty($titre) AND !empty($reponse)){
+            if(!empty($titre) AND !empty($reponse))
+            {
 
                 $insert = $this->pdo->query("INSERT INTO t_sondages(sondage_code, user_id, sondage_temps, sondage_titre) VALUES ('$titrehash', $userId , ADDDATE(NOW(), INTERVAL $temps MINUTE), '$titre' )");
                 $id = $this->pdo->prepare("SELECT sondage_id FROM t_sondages WHERE sondage_titre = ?");
@@ -31,7 +42,9 @@ class CreaSondModel extends Database{
                     $i++;
                 }
             
-            } else {
+            }
+            else 
+            {
                 echo "Vous n'avez pas rentré de questions";
             }
         

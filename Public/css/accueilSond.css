@@ -1,33 +1,38 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-#Sondages{
+#Sondages {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     justify-content: left;
 }
-a{
+
+a {
     width: auto;
     text-decoration: none;
     margin-right: 55px;
 }
-h3{
+
+h3 {
     margin-bottom: 5px;
     margin-top: 25px;
 }
-hr{
+
+hr {
     width: 270px;
     background-color: black;
     margin-bottom: 35px;
 }
-section{
+
+section {
     margin-left: 60px;
     margin-right: 60px;
 }
-article{
+
+article {
     width: 100%;
     background-color: grey;
     padding: 15px;

@@ -17,21 +17,26 @@ $_SESSION['userName'] = 'Samy';
     <title>Liste Amis</title>
     <link rel="stylesheet" href="css/inscription.css">
 
-    <body>
+<body>
 
-        <ul>
+    <ul>
         <h2>Amis Connectés</h2>
-            <?php foreach ($result as $ami ){
+        <?php foreach ($result as $ami )
+            {
                 
-                if($ami->user_id != 1 AND $ami->user_isConnected == 1){
+                if($ami->user_id != 1 AND $ami->user_isConnected == 1)
+                {
                     echo "<li>". $ami->user_name." </li>";
                 }
             } 
             echo "<a href ='listeAmis.php?emailing'> Cliquez ici pour envoyer un mail à tous vos amis !</a>";
-            if (array_key_exists("emailing",$_GET)){
+            if (array_key_exists("emailing",$_GET))
+            {
                 
-                foreach ($result as $ami ){
-                    if($ami->user_id != 1){
+                foreach ($result as $ami )
+                {
+                    if($ami->user_id != 1)
+                    {
                         $destinataire = $ami->user_mail;
                         $username = $_SESSION['userName'];
                         $objet = "Nouveau Sondage de ".$username."";
@@ -43,8 +48,8 @@ $_SESSION['userName'] = 'Samy';
                 }
             }
             ?>
-        </ul>
+    </ul>
 
-    </body>
-    
+</body>
+
 </head>

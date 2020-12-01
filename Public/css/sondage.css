@@ -2,12 +2,16 @@ h1 {
     text-align: center;
     margin: 20px auto;
 }
+
 h2 {
     margin-bottom: 20px;
 }
-h2,h3 {
+
+h2,
+h3 {
     text-align: center;
 }
+
 h3 span {
     color: rgb(233, 0, 0);
 }
@@ -18,15 +22,16 @@ h3 span {
     width: 30%;
     border: solid black 2px;
 }
+
 .reponseSdg ul {
     list-style: none;
 }
-.reponseSdg ul li{
+
+.reponseSdg ul li {
     font-size: 24px;
 }
 
-.reponseSdg input[type="submit"]
-{
+.reponseSdg input[type="submit"] {
     margin-top: 20px;
     cursor: pointer;
     padding: 10px 16px;
@@ -36,16 +41,20 @@ h3 span {
 .resultatSdg {
     width: 50%;
     border: solid black 2px;
-} 
+}
+
 .emailing {
     margin-top: 100px;
 }
+
 .linkEmailing {
     margin-left: 100px;
 }
+
 .endEmailing {
     margin-left: 100px;
 }
+
 .tchatSdg {
     width: 50%;
     background-color: blueviolet;

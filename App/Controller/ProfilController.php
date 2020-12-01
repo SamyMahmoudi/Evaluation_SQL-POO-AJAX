@@ -3,21 +3,39 @@
 namespace App\Controller;
 use App\Model\ProfilModel;
 
+/**
+ *  class ProfilController utilise la function  public function __construct() 
+ *        et la function public function render()
+ */
 class ProfilController {
-
+  /**
+   * Undocumented variable
+   *
+   * @var [type]
+   */
     public $model;
 
+     /**
+   * la fonction __construct éxécute profilModel lorsque la class est instancié 
+   */
     public function __construct()
     {
        $this->model = new ProfilModel();
     }
 
+    /**
+     * contient tous les fonctions de la page profil
+     *
+     * @return void
+     */
     public function render()
     {
       // verifie que l'utilisateur s'est bien connecté
-      if ($_SESSION['connect'] == false) {
+      if ($_SESSION['connect'] == false) 
+      {
         header("Location:index.php?page=Connexion");
-        }
+      }
+
       // recup sondages from user
       $sondages = $this->model->recupSondUser();
 

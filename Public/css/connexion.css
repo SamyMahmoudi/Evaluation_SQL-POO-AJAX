@@ -1,33 +1,35 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
 
-#couleur{
+#couleur {
     background-color: blue;
     width: auto;
     height: 100px;
 }
 
 main {
-    
-display:flex ;
-flex-direction: column;
-align-items: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-main #connexion{
+main #connexion {
     margin: 15px;
 }
-main #username{
+
+main #username {
     margin-left: 20px;
     margin-bottom: 10px;
 }
-h1{
+
+h1 {
     margin-top: 10px;
 }
 
-#fond{
+#fond {
     background-color: #c0c0c0;
     display: flex;
     flex-direction: column;
@@ -36,7 +38,8 @@ h1{
     border-radius: 10px;
     padding: 15px;
 }
-#envoyer{
+
+#envoyer {
     margin-left: 80px;
     width: 100px;
     height: 25px;

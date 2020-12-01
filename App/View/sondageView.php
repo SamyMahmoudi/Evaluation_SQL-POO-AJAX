@@ -21,32 +21,45 @@
         foreach($sondages as $sondage) {
             echo '<h1>Titre du sondage : '.$sondage->sondage_titre.'</h1>';
 
-            if($already == true){
+            if($already == true)
+            {
 
-                if($sondage->sondage_statut == "en cours"){
+                if($sondage->sondage_statut == "en cours")
+                {
                     echo"<div class='alreadyRep'><p>Vous avez déjà répondu à ce sondage.</p><h2>SCORE ACTUEL :<h2>";
-                    foreach ($reponses as $reponse) {
-                        echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
+                    foreach ($reponses as $reponse) 
+                    {
+                     echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
                     }echo '</div>'; ?>
     <?php 
-                } else {
+                } 
+                else 
+                {
                         echo "<div class='resultatSdg'><h2>Résultats du sondage de ".$sondage->user_name."</h2>";
-                        foreach ($reponses as $reponse) {
+                        foreach ($reponses as $reponse) 
+                        {
                             echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
                         }
                 } echo "</div>";
-            } else {
+            } 
+            else 
+            {
 
-                if ($sondage->sondage_statut == "en cours") { 
+                if ($sondage->sondage_statut == "en cours") 
+                { 
                     echo "<form class='reponseSdg' method='POST'> <ul>";
-                        foreach($reponses as $reponse){
+                        foreach($reponses as $reponse)
+                        {
                             echo '<li><input type="radio" name="reponse" value="'.$reponse->reponse_titre.'">'.$reponse->reponse_titre.'</li>
                             <li>'.$reponse->reponse_score.'</li>';    
                         }
                     echo "<input type='submit' name='envoiRep' value='Envoyer sa réponse'></ul></form>"; 
-                } else {
+                } 
+                else 
+                {
                     echo "<div class='resultatSdg'><h2>Résultats du sondage de ".$sondage->user_name."</h2>";
-                    foreach ($reponses as $reponse) {
+                    foreach ($reponses as $reponse) 
+                    {
                         echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
                     }
                 } echo "</div>";
@@ -55,15 +68,19 @@
     ?>
                         <section class="emailing">
     <?php 
-                    if ($sondage->user_id == $_SESSION['userId']){
-                        if (array_key_exists("em",$_GET)){           
+                    if ($sondage->user_id == $_SESSION['userId'])
+                    {
+                        if (array_key_exists("em",$_GET))
+                        {           
                             switch ($_GET["em"]):
                                 case '':
                                     echo "<a class='linkEmailing' href='?page=sondage&c=".$_GET['c']."&em=sendmails'> Cliquez ici pour envoyer un mail à tous vos amis !</a>";
                                 break;
                                 case 'sendmails':
-                                    foreach ($amis as $ami ){
-                                        if($ami->user_id != $_SESSION['userId']){
+                                    foreach ($amis as $ami )
+                                    {
+                                        if($ami->user_id != $_SESSION['userId'])
+                                        {
                                             $destinataire = $ami->user_mail;
                                             $username = $_SESSION['userName'];
                                             $objet = "Nouveau Sondage de ".$username."";
