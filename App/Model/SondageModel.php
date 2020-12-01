@@ -55,40 +55,41 @@ class SondageModel extends Database{
         $result = $listFriends->fetchAll(\PDO::FETCH_OBJ);
         return $result;
     }
-
     /**
      * gere les reponses des utilisateurs
      *
      * @return void
      */
-    public function repUsers()
-    {
-        if(isset($_POST['envoiRep']) AND !empty($_POST['reponse']))
-        {
-            $userId = $_SESSION['userId'];
-            $alreadyRep = $this->pdo->prepare("SELECT * FROM t_usersReponses WHERE user_id = ? AND sondage_code = ? ");
-            $alreadyRep->execute(array($userId,$_GET['c']));
-            $row = $alreadyRep->rowCount();
-            if($row == 0)
-            {
-                $stockRep = $this->pdo->prepare("INSERT INTO t_usersReponses(user_id,sondage_code,reponse_titre) VALUES (?,?,?)");
-                $stockRep->execute(array(
-                    $_SESSION['userId'],
-                    $_GET['c'],
-                    $_POST['reponse'])
-                );
-                $sdg = $this->pdo->prepare("SELECT sondage_id FROM t_sondages WHERE sondage_code = ?");
-                $sdg->execute(array($_GET['c']));
-                $sondage_id = $sdg->fetch(\PDO::FETCH_ASSOC);
-                $choix = $this->pdo->prepare("UPDATE t_reponses SET reponse_score = reponse_score+1 WHERE sondage_id = ? AND reponse_titre = ?");
-                $choix->execute(array($sondage_id['sondage_id'],$_POST['reponse']));
-            } 
-            else 
-            {
-                header("location:index.php?page=sondage&answer=yes&c=".$_GET['c']);
-            }
+    public function repUsers(){
+        
+          
+        $userId = $_SESSION['userId'];
+        $alreadyRep = $this->pdo->prepare("SELECT * FROM t_usersReponses WHERE user_id = ? AND sondage_code = ? ");
+        $alreadyRep->execute(array($userId,$_GET['c']));
+        $row = $alreadyRep->rowCount();
 
-        }
+        if($row == 0){
+            if(isset($_POST['envoiRep']) AND !empty($_POST['reponse']))
+                { 
+                    $stockRep = $this->pdo->prepare("INSERT INTO t_usersReponses(user_id,sondage_code,reponse_titre) VALUES (?,?,?)");
+                    $stockRep->execute(array(
+                        $_SESSION['userId'],
+                        $_GET['c'],
+                        $_POST['reponse'])
+                    );
+
+                    $sdg = $this->pdo->prepare("SELECT sondage_id FROM t_sondages WHERE sondage_code = ?");
+                    $sdg->execute(array($_GET['c']));
+                    $sondage_id = $sdg->fetch(\PDO::FETCH_ASSOC);
+
+                    $choix = $this->pdo->prepare("UPDATE t_reponses SET reponse_score = reponse_score+1 WHERE sondage_id = ? AND reponse_titre = ?");
+                    $choix->execute(array($sondage_id['sondage_id'],$_POST['reponse']));
+                    header("location:index.php?page=sondage&em&c=".$_GET['c']);
+                }
+        } else {
+                $hasAlready = true;
+                return $hasAlready;
+            } 
     }
     /**
      * gere le temps du sondage

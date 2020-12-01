@@ -17,30 +17,57 @@
 
     <main>
 
-        <?php 
-        foreach($sondages as $sondage) 
-        {
-            echo '<h1>'.$sondage->sondage_titre.'</h1>';
+    <?php 
+        foreach($sondages as $sondage) {
+            echo '<h1>Titre du sondage : '.$sondage->sondage_titre.'</h1>';
 
-            // 1 SI LE SONDAGE EST EN COURS
-            if ($sondage->sondage_statut == "en cours") 
-            { 
+            if($already == true)
+            {
 
-                echo "<form class='reponseSdg' method='POST'>
-                    <ul>";
+                if($sondage->sondage_statut == "en cours")
+                {
+                    echo"<div class='alreadyRep'><p>Vous avez déjà répondu à ce sondage.</p><h2>SCORE ACTUEL :<h2>";
+                    foreach ($reponses as $reponse) 
+                    {
+                     echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
+                    }echo '</div>'; ?>
+    <?php 
+                } 
+                else 
+                {
+                        echo "<div class='resultatSdg'><h2>Résultats du sondage de ".$sondage->user_name."</h2>";
+                        foreach ($reponses as $reponse) 
+                        {
+                            echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
+                        }
+                } echo "</div>";
+            } 
+            else 
+            {
+
+                if ($sondage->sondage_statut == "en cours") 
+                { 
+                    echo "<form class='reponseSdg' method='POST'> <ul>";
                         foreach($reponses as $reponse)
                         {
-                                echo '<li><input type="radio" name="reponse" value="'.$reponse->reponse_titre.'">'.$reponse->reponse_titre.'</li>
-                                <li>'.$reponse->reponse_score.'</li>';    
+                            echo '<li><input type="radio" name="reponse" value="'.$reponse->reponse_titre.'">'.$reponse->reponse_titre.'</li>
+                            <li>'.$reponse->reponse_score.'</li>';    
                         }
-                    echo "<input type='submit' name='envoiRep' value='Envoyer sa réponse'>
-                    </ul>
-                </form>"; ?>
-
-                <section class="emailing">
-                    <?php 
-                    // 2 si le sondage est celui de l'utilisateur
-                    // apparition fonctionnalité emailing
+                    echo "<input type='submit' name='envoiRep' value='Envoyer sa réponse'></ul></form>"; 
+                } 
+                else 
+                {
+                    echo "<div class='resultatSdg'><h2>Résultats du sondage de ".$sondage->user_name."</h2>";
+                    foreach ($reponses as $reponse) 
+                    {
+                        echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
+                    }
+                } echo "</div>";
+            } 
+        }    
+    ?>
+                        <section class="emailing">
+    <?php 
                     if ($sondage->user_id == $_SESSION['userId'])
                     {
                         if (array_key_exists("em",$_GET))
@@ -68,29 +95,13 @@
                                 case'end':
                                     echo "<p class='endEmailing'>Un mail a bien été envoyé à tous vos amis</p>";
                                 break;
-
                                 default:
                                     header("location:?page=sondage&c=".$_GET['c']."");
-                            endswitch;
-                        }
-                     }
-                    ?> 
-                </section>
-                
-        <?php           
-            } 
-            else 
-            {
-                // 3 SI LE SONDAGE EST FINI
-                echo "<div class='resultatSdg'><h2>Résultats du sondage de ".$sondage->user_name."</h2>";
-                foreach ($reponses as $reponse) 
-                {
-                    echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
-                }
-            }
-            echo "</div>";
-        }?>
-
+                                endswitch;
+                        } 
+                    }
+    ?>
+                    </section>
     </main>
 </body>
 </html>

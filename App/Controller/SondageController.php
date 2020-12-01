@@ -32,7 +32,7 @@ class SondageController {
       // recupere la liste d'amis de l'utilisateur
       $amis = $this->model->emailing();
      
-      $this->model->repUsers();
+      $already = $this->model->repUsers();
       $this->model->sdgFinish();
 
       //template page sondage
