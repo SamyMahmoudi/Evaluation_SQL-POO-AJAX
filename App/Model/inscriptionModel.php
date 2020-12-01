@@ -16,6 +16,7 @@ class InscriptionModel extends Database{
             $mdp = password_hash($_POST['mdpasse'], PASSWORD_DEFAULT);
             
             //Fait la verif si pseudo existe dans la BDD
+            
             $verif = $this->pdo->prepare("SELECT user_name FROM t_users WHERE user_name = ?");
             $verif->execute(array($username));
             $donnees = $verif->rowCount();
