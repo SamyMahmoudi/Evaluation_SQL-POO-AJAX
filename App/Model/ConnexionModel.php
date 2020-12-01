@@ -2,11 +2,19 @@
 
 namespace App\Model;
 use Core\Database;
-
+/**
+ * class ConnexionModel récupère les propriétés et les methods de database grace a extends
+ */
 class ConnexionModel extends Database{
 
+    /**
+     *  fonction qui verifie si l'utilisateur est inscrit dans la bdd et si il peut se connecter.
+     *
+     * @return void
+     */
     public function Searchconnexion()
     { 
+        //vérifie que les inputs sont remplis 
         if(isset($_POST['email']) && isset($_POST['password']))
         {
             $email = htmlspecialchars($_POST['email']);
@@ -21,6 +29,7 @@ class ConnexionModel extends Database{
             // verif if user already exist
             if($row == 1 AND filter_var($email, FILTER_VALIDATE_EMAIL))
             {
+                //déshah le mdp 
                 if(password_verify($password, $data['user_password'])){   
                     $_SESSION['userId'] = $data['user_id'];
                     $_SESSION['userName'] = $data['user_name'];

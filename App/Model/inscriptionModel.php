@@ -3,8 +3,16 @@
 namespace App\Model;
 use Core\Database;
 
+/**
+ * class InscriptionModel recupere les propriétés et les methods de database grace a extends
+ */
 class InscriptionModel extends Database{
 
+    /**
+     * fonction qui inscrire un utilisateur
+     *
+     * @return void
+     */
     public function inscription()
     {   
         //Quand le bouton est validé
@@ -20,11 +28,13 @@ class InscriptionModel extends Database{
             $verif->execute(array($username));
             $donnees = $verif->rowCount();
             if ($donnees == 0){
+
                 //Fait la verif si pseudo existe dans la BDD
                 $verif2 = $this->pdo->prepare("SELECT user_mail FROM t_users WHERE user_mail = ?");
                 $verif2->execute(array($email));
                 $donnees2 = $verif2->rowCount();
                 if($donnees2 == 0 AND filter_var($email, FILTER_VALIDATE_EMAIL)){
+                    
                 //Verifie si les champs sont remplis
                     if(!empty($_POST['username']) AND !empty($_POST['email']) AND !empty($_POST['mdpasse'])){
                         //Verifie si les mots de passes sont identiques

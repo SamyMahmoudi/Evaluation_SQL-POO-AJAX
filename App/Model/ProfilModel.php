@@ -3,14 +3,25 @@
 namespace App\Model;
 use Core\Database;
 
+/**
+ * class ProfilModel recupere les propriétés et les methods de database grace a extends
+ */
 class ProfilModel extends Database{
 
-    // récupère données utilisateurs
+    /**
+     * récupère données utilisateurs
+     *
+     * @return void
+     */
     public function recupProfil(){
         return $this->query("SELECT * FROM t_users WHERE user_id =".$_SESSION['userId']);
     }
 
-    // récupère sondages de l'utilisateur
+    /**
+     * récupère sondages de l'utilisateur
+     *
+     * @return void
+     */
     public function recupSondUser(){
         $recherche =$this->pdo->prepare("SELECT * FROM t_users INNER JOIN t_sondages ON t_users.user_id=t_sondages.user_id WHERE t_sondages.user_id = :user");
         $recherche->execute([
@@ -20,6 +31,11 @@ class ProfilModel extends Database{
         return $foundUser;
     }
 
+    /**
+     * fonction qui update les données de l'utilisateur
+     *
+     * @return void
+     */
     public function updateUserData()
     {   
         // changement de nom d'utilisateur

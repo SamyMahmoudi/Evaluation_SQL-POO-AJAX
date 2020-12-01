@@ -39,7 +39,7 @@ class Database {
             return $e->getMessage();
         }
     }
-
+    
     public function query($statement,$one = false){
         
         $query=$this->pdo->query($statement);

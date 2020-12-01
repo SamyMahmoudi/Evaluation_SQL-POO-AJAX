@@ -3,8 +3,16 @@ namespace App\Model;
 
 use Core\Database;
 
+/**
+ * class CreaSondModel recupere les propriétés et les methods de database grace a extends
+ */
 class CreaSondModel extends Database{
 
+    /**
+     *  fonction qui sert à créer un sondage 
+     *
+     * @return void
+     */
     public function CreaSondage(){
 
         if(isset($_POST["valid"])){

@@ -3,8 +3,16 @@
 namespace App\Model;
 use Core\Database;
 
+/**
+ * class AmisModel recupere les propriétés et les methods de database grace a extends
+ */
 class AmisModel extends Database{
 
+    /**
+     * fonction qui sert à rechercher les utilisateurs inscrits
+     *
+     * @return void
+     */
     public function SearchUsers()
     {
         if (isset($_POST["valid-search-user"])){
@@ -17,6 +25,11 @@ class AmisModel extends Database{
         }
     }
 
+    /**
+     * fonction qui sert à gerer la liste d'amis
+     *
+     * @return void
+     */
     public function ListFriends()
     {
         $listFriends = $this->pdo->prepare("SELECT * FROM t_users INNER JOIN t_friends WHERE (friend_id_one = user_id OR friend_id_two = user_id) AND (friend_id_one = :user_one OR friend_id_two = :user_two)");
@@ -28,6 +41,11 @@ class AmisModel extends Database{
         return $result;
     }
 
+    /**
+     * fonction pour ajouter un ami
+     *
+     * @return void
+     */
     public function addFriends()
     { 
         if(array_key_exists("ajouter",$_GET)){
@@ -37,6 +55,11 @@ class AmisModel extends Database{
         }   
     }
 
+    /**
+     * fonction pour supprimer un ami
+     *
+     * @return void
+     */
     public function deleteFriends()
     { 
         if(array_key_exists("delete",$_GET)){
