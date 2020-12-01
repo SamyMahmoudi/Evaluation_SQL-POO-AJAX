@@ -15,13 +15,14 @@
     </header>
     <main>
 
-    <!---------- PARTIE SONDAGE AMIS ---------->
+                <!-- PARTIE SONDAGE AMIS -->
         <section>
-            <h3>Les sondages de vos ami(e)s</h3>
+            <h3>Les sondages de vos ami(e)s en cours</h3>
             <hr align="left">
             <div id="Sondages">
                 <?php foreach($sondagesFriends as $sondage):      
-                        if($sondage->user_id !=  $_SESSION['userId']) { ?>
+                        if($sondage->user_id !=  $_SESSION['userId']) { 
+                            if($sondage->sondage_statut == "en cours") { ?>
                         <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
                             <article>
                                 <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
@@ -29,12 +30,12 @@
                                 <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
                             </article>
                         </a>
-                <?php } endforeach  ?>
-
+                <?php 
+                    } 
+                } endforeach  ?>
             </div>
-        </section>
-    
-    <!---------- PARTIE SONDAGE TERMINES DU USER ---------->
+        </section>   
+                <!-- PARTIE SONDAGE TERMINES DU USER -->     
         <section>
             <h3>Vos sondages terminés</h3>
             <hr align="left">
@@ -44,14 +45,34 @@
                         <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
                             <article>
                                 <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
-                                <p>temps restant : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
+                                <p>Fini le : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
                                 <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
                             </article>
                         </a>
                 <?php } endforeach  ?>
             </div>
         </section>
-
+                <!-- PARTIE SONDAGE AMIES TERMINÉS -->
+        <section>
+            <h3>Les sondages de vos ami(e)s terminés</h3>
+            <hr align="left">
+            <div id="Sondages">
+            <?php foreach($sondagesFriends as $sondage):      
+                        if($sondage->user_id !=  $_SESSION['userId']) { 
+                            if($sondage->sondage_statut == "Finish") { ?>
+                        <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
+                            <article>
+                                <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
+                                <p>Fini le : <?= htmlspecialchars($sondage->sondage_temps) ?></p>
+                                <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
+                            </article>
+                        </a>
+                <?php 
+                    } 
+                } endforeach  ?>
+            <div>
+        </section>
+    
     </main>
 </body>
 </html>

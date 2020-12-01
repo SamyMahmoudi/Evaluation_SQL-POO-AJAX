@@ -20,9 +20,8 @@ class SondageController {
       // recupere la liste d'amis de l'utilisateur
       $amis = $this->model->emailing();
      
-      $this->model->repUsers();
+      $already = $this->model->repUsers();
       $this->model->sdgFinish();
-
 
       require ROOT."/App/View/SondageView.php";
 
