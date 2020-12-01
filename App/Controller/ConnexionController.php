@@ -17,11 +17,16 @@ class ConnexionController {
        $this->model = new ConnexionModel();
     }
     
+    /**
+     * contient tous les fonctions de la page connexion
+     *
+     * @return void
+     */
+
     public function Connexion()
     {
       //connecte l'utilisateur
       $this->model->Searchconnexion(); 
-
 
       //template page Connexion
       require ROOT."/App/View/ConnexionView.php";

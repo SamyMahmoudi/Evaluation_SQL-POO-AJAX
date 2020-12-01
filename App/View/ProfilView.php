@@ -55,7 +55,7 @@
             <h3>Vos sondages en cours</h3>
             <hr align="left">
             <div id="Sondages">
-                    <?php foreach($sondages as $sondage): ?>
+                    <?php foreach($sondages as $sondage): if($sondage->sondage_statut == "en cours") { ?>
                         <a href="index.php?page=sondage&em&c=<?= htmlspecialchars($sondage->sondage_code) ?>">
                             <article>
                                 <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
@@ -63,7 +63,7 @@
                                 <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
                             </article>
                         </a>
-                    <?php endforeach  ?>
+                    <?php } endforeach  ?>
             </div>
         </section>
     </main>

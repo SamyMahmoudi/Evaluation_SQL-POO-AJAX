@@ -97,7 +97,7 @@
     flex-direction: column;
     min-height: 90vh;
     width: 40vw;
-    background-color:#cee5f2;
+    background-color: #cee5f2;
 }
 
 .listing-amis h1 {
@@ -145,13 +145,13 @@
     cursor: pointer;
 }
 
-.section-amisConnectes{
+.section-amisConnectes {
     width: 18%;
     min-height: 90vh;
     background-color: #7c98b3;
 }
 
-.section-amisConnectes h1{
+.section-amisConnectes h1 {
     text-align: center;
     padding-top: 30px;
     font-size: 36px;
@@ -170,7 +170,7 @@
     color: white;
 }
 
-.btnConnect{
+.btnConnect {
     width: 10px;
     padding-right: 6px;
 }

@@ -85,7 +85,7 @@
 }
 
 
-#erreur{
+#erreur {
     position: fixed;
     left: 38.5%;
     top: 40%;
@@ -100,12 +100,14 @@
     z-index: 2;
     flex-direction: column;
 }
-#erreur button{
+
+#erreur button {
     margin-top: 25px;
     width: 70px;
     text-align: center;
 }
-#fond{
+
+#fond {
     width: 100%;
     position: fixed;
     height: 100%;

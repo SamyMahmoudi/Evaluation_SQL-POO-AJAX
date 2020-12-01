@@ -1,14 +1,14 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
 
-h1{
+h1 {
     text-align: center;
 }
 
-footer{
+footer {
     height: 70px;
     background-color: grey;
     position: fixed;
@@ -18,14 +18,16 @@ footer{
     color: white;
     margin-top: 70px;
 }
-footer p{
+
+footer p {
     text-align: center;
 }
-main{
+
+main {
     margin-bottom: 120px;
 }
 
-section{
+section {
     width: 85%;
     height: calc(100%+70px);
     margin: auto;
@@ -36,7 +38,8 @@ section{
     color: white;
     border-radius: 20px;
 }
-#intitule{
+
+#intitule {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -44,30 +47,37 @@ section{
     width: 90%;
     margin: auto;
 }
-#intitule input{
+
+#intitule input {
     height: 30px;
     text-align: center;
     font-size: large;
 }
-#intitule *{
+
+#intitule * {
     margin-bottom: 25px;
 }
-.reponse{
+
+.reponse {
     display: flex;
-    
+
     width: 90%;
     margin: auto;
     margin-bottom: 25px;
 }
-.reponse label{
+
+.reponse label {
     margin-right: 25px;
 }
-.reponse input{
+
+.reponse input {
     width: 90%;
 }
-section button{
+
+section button {
     margin: auto;
 }
+
 .button {
     position: relative;
     background-color: #ffffff;
@@ -76,7 +86,8 @@ section button{
     color: #000000;
     padding: 20px;
     text-align: center;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
     transition-duration: 0.4s;
     text-decoration: none;
     overflow: hidden;
@@ -90,7 +101,7 @@ section button{
     position: absolute;
     padding-top: 300%;
     padding-left: 350%;
-    margin-left: -20px!important;
+    margin-left: -20px !important;
     margin-top: -120%;
     opacity: 0;
     transition: all 0.8s
@@ -102,7 +113,8 @@ section button{
     opacity: 1;
     transition: 0s
 }
-#bouttons{
+
+#bouttons {
     display: flex;
     justify-content: space-around;
 }

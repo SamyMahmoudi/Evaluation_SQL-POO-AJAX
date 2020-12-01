@@ -17,8 +17,9 @@ class AccueilSondController {
     {
        $this->model = new AccueilSondModel();
     }
-    /**
-     * function qui effectue recupSondFriend et recupSondUser 
+    
+   /**
+     * contient tous les fonctions de la page Accueilsond
      *
      * @return void
      */

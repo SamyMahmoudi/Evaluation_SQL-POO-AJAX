@@ -1,7 +1,6 @@
 <?php 
 
 namespace App\Controller;
-
 use App\Model\SondageModel;
 /**
  *  class SondageController utilise la function  public function __construct() 
@@ -17,16 +16,24 @@ class SondageController {
        $this->model = new SondageModel();
     }
 
+    /**
+     * contient tous les fonctions de la page sondage
+     *
+     * @return void
+     */
     public function render()
     {
-      //recupere le sondage et affiche le sondage
-     $sondages = $this->model->recupSondage();
+      // recupere les sondages terminees de l'utilisateur
+      $sondages = $this->model->recupSondage();
 
-     //recupere les reponses et les affiches 
-     $reponses = $this->model->recupReponse();
+      // recupere les reponses terminees de l'utilisateur
+      $reponses = $this->model->recupReponse();
+
+      // recupere la liste d'amis de l'utilisateur
+      $amis = $this->model->emailing();
      
-     // envoie un mail aux amis
-     $amis = $this->model->emailing();
+      $this->model->repUsers();
+      $this->model->sdgFinish();
 
       //template page sondage
       require ROOT."/App/View/SondageView.php";

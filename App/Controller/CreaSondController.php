@@ -17,15 +17,18 @@ class CreaSondController {
        $this->model = new CreaSondModel();
     }
 
+    /**
+     * contient tous les fonctions de la page creation de sondage
+     *
+     * @return void
+     */
     public function CreaSond()
     {
       //template page creasondage
       require ROOT."/App/View/CreaSondView.php";
 
-
       //permet a l'utilisateur de crée un sondage
       $this->model->CreaSondage();
-
     }
 
 
