@@ -102,9 +102,8 @@ class SondageModel extends Database{
     }
 
     public function saveTchat(){
-        if(!empty($_POST['pseudo']) AND !empty($_POST['message'])){ // si les variables ne sont pas vides
+        if(!empty($_POST['message'])){ // si les variables ne sont pas vides
     
-            $pseudo = ($_POST['pseudo']);
             $message = ($_POST['message']);
     
             // puis on entre les données en base de données :
