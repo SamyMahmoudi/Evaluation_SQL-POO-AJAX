@@ -22,7 +22,7 @@ function keepTchat() {
         success:function(renvoi){ 
             $('#container-messages').html("");
             renvoi.forEach(tchat => {
-                $('#container-messages').append("<li>" + tchat.user_name + " dit : " + tchat.tchat_message + "</li>");
+                $('#container-messages').append("<li class='msg'>" + tchat.user_name + " dit : " + tchat.tchat_message + "</li>");
         });
         }
     });
@@ -32,9 +32,9 @@ function afficheScore() {
         url:"index.php?page=ajax&function=score&c="+numSondage,
         dataType:"json",
         success:function(renvoi){ 
-            $('#score').html("");
+            $('.score').html("");
             renvoi.forEach(score => {
-                $('#score').append("<li>"+score.reponse_titre+" a un score de "+score.reponse_score+"</li>");
+                $('.score').append("<li>"+score.reponse_titre+" a un score de "+score.reponse_score+"</li>");
         });
         }
     });

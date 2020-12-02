@@ -27,14 +27,14 @@
                 if($sondage->sondage_statut == "en cours")
                 {
                     echo"<div class='alreadyRep'><p>Vous avez déjà répondu à ce sondage.</p><h2>SCORE ACTUEL :<h2>";
-                    echo "<ul id='score'></ul></div>";
+                    echo "<ul class='score'></ul></div>";
     ?>
     <?php 
                 } 
                 else 
                 {
                     echo "<div class='resultatSdg'><h2>Résultats du sondage de ".$sondage->user_name."</h2>";
-                    echo "<ul id='score'></ul></div>";
+                    echo "<ul class='score'></ul></div>";
                 }
             } 
             else 
@@ -53,7 +53,7 @@
                 else 
                 {
                     echo "<div class='resultatSdg'><h2>Résultats du sondage de ".$sondage->user_name."</h2>";
-                    echo "<ul id='score'></ul></div>";
+                    echo "<ul class='score'></ul></div>";
                 }
             } 
         }    
