@@ -32,7 +32,7 @@ mot de passe : alexandre
   - mot de passe hashé dans la bdd
   - vérification des disponibilités d'adresse et de pseudo
 * connexion
- - vérification du mot de passe hashé
+  - vérification du mot de passe hashé
 
 ### Page profil
 * modification du profil
