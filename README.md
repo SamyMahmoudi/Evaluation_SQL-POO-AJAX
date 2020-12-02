@@ -19,28 +19,28 @@ Arrivée sur le site vous pouvez directement vous connecter grâce à vos identi
  
 # Fonctionnalités
 
-###Page profil
+### Page profil
 * modification du profil
 * voir nos sondages en cours
 
-###Page amis
+### Page amis
 * ajout et suppression d'amis
 * vision des amis connectés
 
 
-###Création de sondages
+### Création de sondages
 * choix du nombre de réponses
 * choix de durée de réponses
 
-###Actualités
+### Actualités
 * voir les sondages des amis
 `* en cours`
 `* terminés`
 * Voir nos sondages terminés
 
-###Page réponses sondage
+### Page réponses sondage
 * Lorsqu'on arrive sur une page de sondage
-`* qui nous appartient et en cours, vous pouvez invitez vos amis par mail, répondre une fois à votre sondage, voir les réponses en direct et tchatter`
-`* qui ne nous appartient pas et en cours, vous pouvez répondre une fois, voir les réponses en direct et tchatter`
-`* qui est terminé, vous pouvez voir les résultats et continuer de tchatter`
+` * qui nous appartient et en cours, vous pouvez invitez vos amis par mail, répondre une fois à votre sondage, voir les réponses en direct et tchatter`
+` * qui ne nous appartient pas et en cours, vous pouvez répondre une fois, voir les réponses en direct et tchatter`
+` * qui est terminé, vous pouvez voir les résultats et continuer de tchatter`
 
