@@ -20,8 +20,8 @@ Arrivée sur le site vous pouvez directement vous connecter grâce à vos identi
 # Fonctionnalités
 
 ###Page profil
-*modification du profil
-*voir nos sondages en cours
+* modification du profil
+* voir nos sondages en cours
 
 ###Page amis
 *ajout et suppression d'amis
