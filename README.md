@@ -3,11 +3,11 @@
 
 # Ajouter la BDD
 Penser à modifier le fichier config.php
-`$dbConfig = [
-    "host" => "localhost:3306",
-    "dbname" => "SondaPote",
-    "dbuser" => "root",
-    "dbpass" => "",
+`$dbConfig = [   
+    "host" => "localhost:3306",  
+    "dbname" => "SondaPote",  
+    "dbuser" => "root",  
+    "dbpass" => "",  
 ];`
 
 # Connexion au site
