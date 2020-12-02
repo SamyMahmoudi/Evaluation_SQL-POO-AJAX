@@ -25,7 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     <?php 
                         // Liste des amis avec possibilités de les supprimer
                         foreach($amis as $ami)
@@ -43,23 +43,24 @@
 
         <section class="recherche-amis">
             <h1>Recherche utilisateurs</h1>
-            
+
             <form method="POST">
                 <input type="search" name="search-user" id="" placeholder="rechercher un joueur">
-                <button type="submit" name="valid-search-user"><img src="images/icon-search.png"alt="search-icon"></button>
+                <button type="submit" name="valid-search-user"><img src="images/icon-search.png"
+                        alt="search-icon"></button>
             </form>
 
-           
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Utilisateur</th>
-                            <th>Ajouter</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        <?php
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Utilisateur</th>
+                        <th>Ajouter</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php
                         // renvoie les résultats de la recherche de l'utilisateur 
                             if(isset($_POST["valid-search-user"]))
                             {
@@ -86,43 +87,48 @@
                             }
                         ?>
 
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
         </section>
 
         <section class="section-amisConnectes">
-        <h1>Amis déconnecté(e)s</h1>
+            <h1>Amis déconnecté(e)s</h1>
 
-<ul>
-     <?php 
-        foreach($amis as $ami){
-            if($ami->user_id != $_SESSION['userId'] AND $ami->user_isConnected == 0){
+            <ul>
+                <?php 
+        foreach($amis as $ami)
+        {
+            if($ami->user_id != $_SESSION['userId'] AND $ami->user_isConnected == 0)
+            {
                 echo "<li> <img class='btnDisconnect' src='images/btnDisconnect.png'>". $ami->user_name."</li>";
                 $userCheck[] = $ami->user_id;
-           }                        
-       }
+            }                        
+        }
     ?>
-    
-</ul>
 
-        <h1>Amis connecté(e)s</h1>
+            </ul>
 
-        <ul>
-             <?php 
-                foreach($amis as $ami){
-                    if($ami->user_id != $_SESSION['userId'] AND $ami->user_isConnected == 1){
+            <h1>Amis connecté(e)s</h1>
+
+            <ul>
+                <?php 
+                foreach($amis as $ami)
+                {
+                    if($ami->user_id != $_SESSION['userId'] AND $ami->user_isConnected == 1)
+                    {
                         echo "<li> <img class='btnConnect' src='images/btnConnect.png'>". $ami->user_name."</li>";
                         $userCheck[] = $ami->user_id;
-                   }                        
-               }
+                    }                        
+                }
             ?>
-            
-        </ul>
-        
+
+            </ul>
+
 
         </section>
 
     </main>
 
 </body>
+
 </html>

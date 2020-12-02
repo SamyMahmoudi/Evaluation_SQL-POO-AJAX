@@ -103,27 +103,5 @@ class SondageModel extends Database{
         $endate = $this->pdo->query("UPDATE t_sondages SET sondage_statut = 'Finish' WHERE sondage_temps <= NOW()");
     }
 
-    // public function saveTchat(){
-    //     if(isset($_POST['envoieMsg']))
-    //     { 
-    //         if(!empty($_POST['contenu-message']))
-    //         { 
-    //             $message = $_POST['contenu-message'];
-    //             $insertion = $this->pdo->prepare('INSERT INTO t_tchat (user_id, tchat_message, sondage_code) VALUES(?, ?, ?)');
-    //             $insertion->execute(array($_SESSION['userId'], $message, $_GET['c']));
-    //         }
-    //         else
-    //         {
-    //             echo "Vous avez oublié de remplir un des champs !";
-    //         }
-    //     }
-    // }
-
-//     public function refreshTchat(){
- 
-//             $requete = $this->pdo->prepare('SELECT * FROM t_tchat WHERE sondage_code = ?');
-//             $requete->execute(array($_GET['c']));
-//             $messages = $requete->fetchAll();
-//             echo json_encode($messages);
-//     }
+   
  }

@@ -14,7 +14,7 @@ class ConnexionModel extends Database{
      */
     public function Searchconnexion()
     { 
-        //vérifie que les inputs sont remplis 
+        
         if(isset($_POST['email']) && isset($_POST['password']))
         {
             $email = htmlspecialchars($_POST['email']);
@@ -29,7 +29,7 @@ class ConnexionModel extends Database{
             // verif if user already exist
             if($row == 1 AND filter_var($email, FILTER_VALIDATE_EMAIL))
             {
-                //déshah le mdp 
+                
                 if(password_verify($password, $data['user_password']))
                 {   
                     $_SESSION['userId'] = $data['user_id'];

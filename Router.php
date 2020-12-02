@@ -62,8 +62,3 @@ else
         $controller = new  AccueilController();
         $controller->render();
 }
-
-
-
-
-
