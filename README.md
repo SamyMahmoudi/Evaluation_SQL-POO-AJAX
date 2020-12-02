@@ -2,10 +2,10 @@
 `Par Samy MAHMOUDI, Louis-Axel RENARD et Nathan SZIGETI, de 2e année à l'IIM`
 
 # Ajouter la BDD
-Penser à modifier le fichier config.php
+Penser à créer le fichier config.php dans `core/config`
 ```
 $dbConfig = [   
-    "host" => "localhost:3306",  
+    "host" => "localhost",  
     "dbname" => "SondaPote",  
     "dbuser" => "root",  
     "dbpass" => "",  
