@@ -86,10 +86,12 @@ class SondageModel extends Database{
                     $choix->execute(array($sondage_id['sondage_id'],$_POST['reponse']));
                     header("location:index.php?page=sondage&em&c=".$_GET['c']);
                 }
-        } else {
+        } 
+        else 
+        {
                 $hasAlready = true;
                 return $hasAlready;
-            } 
+        } 
     }
     /**
      * gere le temps du sondage
