@@ -2,7 +2,7 @@
 `Par Samy MAHMOUDI, Louis-Axel RENARD et Nathan SZIGETI, de 2e année à l'IIM`
 
 # Ajouter la BDD
-Penser à créer le fichier config.php dans `core/config`
+Pensez à créer le fichier config.php dans `core/config`
 ```
 $dbConfig = [   
     "host" => "localhost",  
