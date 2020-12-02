@@ -99,7 +99,7 @@
                 <ul id="container-messages"></ul>
             </div>
             <form method="POST">
-                <textarea name="contenu-message" id="contenu-message" cols="30" rows="10"></textarea>
+                <textarea name="contenu-message" id="contenu-message" cols="30" rows="3"></textarea>
                 <input type="submit" id="envoieMsg" name="envoieMsg" placeholder="Envoyer le message">
             </form>
 
@@ -108,7 +108,9 @@
 
         </section>
     </main>
-
+    <script>
+    document.getElementById('container-messages').scrollTop = document.getElementById('container-messages').scrollHeight;
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script/tchat.js"></script>
 </body>
