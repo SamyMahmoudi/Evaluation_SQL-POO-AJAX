@@ -5,15 +5,15 @@
 
 #Sondages {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    justify-content: left;
+    
 }
 
 a {
     width: auto;
     text-decoration: none;
     margin-right: 55px;
+    width: 40%;
 }
 
 h3 {

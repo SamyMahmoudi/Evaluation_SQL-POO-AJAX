@@ -49,6 +49,10 @@ h3 span {
     text-align: center;
 }
 
+.score li{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
 .emailing {
     margin-top: 50px;
     text-align: center;
@@ -70,4 +74,46 @@ h3 span {
 #numSondage,#numId {
     font-size: 1px;
     visibility: hidden;
+}
+
+
+/* TCHAT */
+
+#tchat{
+    width: 60%;
+    margin: auto;
+}
+
+#container-messages{
+    height: 250px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 25px 25px 0px 0px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+#container-messages li{
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+#container-messages li:nth-last-child(n){
+    background-color: rgb(168, 168, 255);
+    border-radius: 15px;
+    color: black;
+    padding: 5px;
+}
+#container-messages li:nth-last-child(2n){
+    background-color: rgb(202, 202, 202);
+    border-radius: 15px;
+    color: black;
+}
+
+#tchat form{
+    display: flex;
+    justify-content: center;
+}
+
+#tchat form textarea{
+    width: 100%;
 }

@@ -25,7 +25,7 @@ class ProfilModel extends Database{
      */
     public function recupSondUser()
     {
-        $recherche =$this->pdo->prepare("SELECT * FROM t_users INNER JOIN t_sondages ON t_users.user_id=t_sondages.user_id WHERE t_sondages.user_id = :user");
+        $recherche =$this->pdo->prepare("SELECT * FROM t_users INNER JOIN t_sondages ON t_users.user_id=t_sondages.user_id WHERE t_sondages.user_id = :user ORDER BY t_sondages.sondage_id DESC");
         $recherche->execute([
             ":user" => $_SESSION['userId']
         ]);

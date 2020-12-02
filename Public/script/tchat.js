@@ -1,7 +1,9 @@
 var numSondage = $('#numSondage').text();
 var numId = $('#numId').text();
 
+
 $('#envoieMsg').click(function(e){
+    
     var message =$('#contenu-message').val();
     e.preventDefault();
     $.ajax({
@@ -13,6 +15,7 @@ $('#envoieMsg').click(function(e){
             keepTchat();
         }
     });
+    $('#contenu-message').val('')
 });
 
 function keepTchat() {
@@ -39,7 +42,12 @@ function afficheScore() {
         }
     });
 }
+
+
+
+
 afficheScore();
 keepTchat();
 const refreshTchat = window.setInterval(keepTchat, 3000);
 const refreshScore = window.setInterval(afficheScore, 3000);
+
