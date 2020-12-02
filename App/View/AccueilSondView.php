@@ -21,8 +21,10 @@
             <hr align="left">
             <div id="Sondages">
                 <?php foreach($sondagesFriends as $sondage):      
-                        if($sondage->user_id !=  $_SESSION['userId']) { 
-                            if($sondage->sondage_statut == "en cours") { ?>
+                        if($sondage->user_id !=  $_SESSION['userId']) 
+                        { 
+                            if($sondage->sondage_statut == "en cours") 
+                            { ?>
                         <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
                             <article>
                                 <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
@@ -31,8 +33,8 @@
                             </article>
                         </a>
                 <?php 
-                    } 
-                } endforeach  ?>
+                            } 
+                        } endforeach  ?>
             </div>
         </section>   
                 <!-- PARTIE SONDAGE TERMINES DU USER -->     
@@ -41,7 +43,9 @@
             <hr align="left">
             <div id="Sondages">
                 <?php 
-                    foreach($sondagesUser as $sondage): if($sondage->sondage_statut == "Finish"){  ?>
+                    foreach($sondagesUser as $sondage): if($sondage->sondage_statut == "Finish")
+                    {  
+                ?>
                         <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
                             <article>
                                 <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
@@ -49,7 +53,7 @@
                                 <p>De : <?= htmlspecialchars($sondage->user_name) ?></p>
                             </article>
                         </a>
-                <?php } endforeach  ?>
+             <?php  } endforeach  ?>
             </div>
         </section>
                 <!-- PARTIE SONDAGE AMIES TERMINÉS -->
@@ -58,8 +62,11 @@
             <hr align="left">
             <div id="Sondages">
             <?php foreach($sondagesFriends as $sondage):      
-                        if($sondage->user_id !=  $_SESSION['userId']) { 
-                            if($sondage->sondage_statut == "Finish") { ?>
+                        if($sondage->user_id !=  $_SESSION['userId']) 
+                        { 
+                            if($sondage->sondage_statut == "Finish") 
+                            { 
+            ?>
                         <a href="index.php?page=sondage&c=<?=htmlspecialchars($sondage->sondage_code) ?>">
                             <article>
                                 <h4><?= htmlspecialchars($sondage->sondage_titre) ?></h4>
@@ -68,8 +75,9 @@
                             </article>
                         </a>
                 <?php 
-                    } 
-                } endforeach  ?>
+                            } 
+                        } endforeach  
+                ?>
             <div>
         </section>
     

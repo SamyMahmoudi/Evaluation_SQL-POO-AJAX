@@ -26,7 +26,8 @@ class AmisController {
     public function render()
     {
         //verifie si un utilisateur est connecté sinon le redirige sur la page connexion
-        if ($_SESSION['connect'] == false) {
+        if ($_SESSION['connect'] == false)
+        {
         header("Location:index.php?page=Connexion");
         }
 

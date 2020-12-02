@@ -18,14 +18,25 @@ class AjaxController {
         *
         * @return void
         */
+
+        //gere les fonctions ajax
        public function render()
        {
-         if($_GET['function'] == 'refresh'){
+          //rafraichir le chat
+         if($_GET['function'] == 'refresh')
+         {
             $this->model->refreshTchat();
          }
-         else if($_GET['function'] == 'add') {
+         
+         // ajouter les commentaires
+         else if($_GET['function'] == 'add') 
+         {
             $this->model->saveTchat();
-         }else if($_GET['function'] == 'score'){
+         }
+
+         //rafraichir le score
+         else if($_GET['function'] == 'score')
+         {
             $this->model->recupReponse();
          }
 

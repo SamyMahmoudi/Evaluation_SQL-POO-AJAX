@@ -8,12 +8,7 @@ use App\Model\ProfilModel;
  *        et la function public function render()
  */
 class ProfilController {
-  /**
-   * Undocumented variable
-   *
-   * @var [type]
-   */
-    public $model;
+ 
 
      /**
    * la fonction __construct éxécute profilModel lorsque la class est instancié 

@@ -28,8 +28,10 @@
                     
                     <?php 
                         // Liste des amis avec possibilités de les supprimer
-                        foreach($amis as $ami){
-                            if($ami->user_id != $_SESSION['userId']){
+                        foreach($amis as $ami)
+                        {
+                            if($ami->user_id != $_SESSION['userId'])
+                            {
                                 echo "<tr><td>". $ami->user_name."</td><td><a href='?page=amis&delete=".$ami->friendship_id."'>Supprimer l'ami(e)</a></td></tr>";
                                 $userCheck[] = $ami->user_id;
                             } 
@@ -59,15 +61,23 @@
                         
                         <?php
                         // renvoie les résultats de la recherche de l'utilisateur 
-                            if(isset($_POST["valid-search-user"])){
-                                foreach($resultSearch as $sch){ 
-                                    if (in_array($sch->user_id,$userCheck)) {
+                            if(isset($_POST["valid-search-user"]))
+                            {
+                                foreach($resultSearch as $sch)
+                                { 
+                                    if (in_array($sch->user_id,$userCheck)) 
+                                    {
                                         if ($sch->user_id == $_SESSION['userId'])
-                                        echo "<tr><td>". $sch->user_name."</td><td class='userResult'>Vous</tr>";
-                                        else {
+                                        {
+                                            echo "<tr><td>". $sch->user_name."</td><td class='userResult'>Vous</tr>";
+                                        }                                        
+                                        else 
+                                        {
                                             echo "<tr><td>". $sch->user_name."</td><td>Ami(e)</tr>"; 
                                         }
-                                    } else { 
+                                    } 
+                                    else
+                                    { 
                                         echo "<tr><td>". $sch->user_name."</td>
                                         <td><a href='?page=amis&ajouter=".$sch->user_id."'>Ajouter en ami</a></td>
                                         </tr>";
