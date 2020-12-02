@@ -17,7 +17,7 @@
 
     <main>
 
-    <?php 
+        <?php 
         foreach($sondages as $sondage) {
             echo '<h1>Titre du sondage : '.$sondage->sondage_titre.'</h1>';
 
@@ -29,7 +29,7 @@
                     echo"<div class='alreadyRep'><p>Vous avez déjà répondu à ce sondage.</p><h2>SCORE ACTUEL :<h2>";
                     echo "<ul class='score'></ul></div>";
     ?>
-    <?php 
+        <?php 
                 } 
                 else 
                 {
@@ -58,8 +58,8 @@
             } 
         }    
     ?>
-                        <section class="emailing">
-    <?php 
+        <section class="emailing">
+            <?php 
                     if ($sondage->user_id == $_SESSION['userId'])
                     {
                         if (array_key_exists("em",$_GET))
@@ -93,23 +93,24 @@
                         } 
                     }
     ?>
-                    </section>
-                    <section id="tchat">
-                    <div>
-                        <ul id="container-messages"></ul>
-                    </div>
-                    <form method="POST">
-                        <textarea name="contenu-message" id="contenu-message" cols="30" rows="10"></textarea>
-                        <input type="submit" id="envoieMsg" name="envoieMsg" placeholder="Envoyer le message">
-                    </form>
+        </section>
+        <section id="tchat">
+            <div>
+                <ul id="container-messages"></ul>
+            </div>
+            <form method="POST">
+                <textarea name="contenu-message" id="contenu-message" cols="30" rows="10"></textarea>
+                <input type="submit" id="envoieMsg" name="envoieMsg" placeholder="Envoyer le message">
+            </form>
 
-                    <p id="numSondage"><?= $_GET['c'] ?></p>
-                    <p id="numId"><?= $_SESSION['userId'] ?></p>
+            <p id="numSondage"><?= $_GET['c'] ?></p>
+            <p id="numId"><?= $_SESSION['userId'] ?></p>
 
-                    </section>
+        </section>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script/tchat.js"></script>
 </body>
+
 </html>
