@@ -17,7 +17,7 @@ h3 span {
 }
 
 .reponseSdg {
-    margin-left: 100px;
+    margin:auto;
     padding: 20px;
     width: 30%;
     border: solid black 2px;
@@ -41,18 +41,18 @@ h3 span {
 .resultatSdg {
     width: 50%;
     border: solid black 2px;
+    margin: auto;
+}
+
+.resultatSdg ul {
+    list-style: none;
+    text-align: center;
 }
 
 .emailing {
-    margin-top: 100px;
-}
-
-.linkEmailing {
-    margin-left: 100px;
-}
-
-.endEmailing {
-    margin-left: 100px;
+    margin-top: 50px;
+    text-align: center;
+    font-size: 24px;
 }
 
 .tchatSdg {
@@ -65,4 +65,9 @@ h3 span {
 
 .alreadyRep {
     text-align: center;
+}
+
+#numSondage,#numId {
+    font-size: 1px;
+    visibility: hidden;
 }
