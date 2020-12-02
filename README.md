@@ -3,22 +3,27 @@
 
 # Ajouter la BDD
 Penser à modifier le fichier config.php
-`$dbConfig = [   
+```
+$dbConfig = [   
     "host" => "localhost:3306",  
     "dbname" => "SondaPote",  
     "dbuser" => "root",  
     "dbpass" => "",  
-];`
-
+];
+```
 # Connexion au site
 
 Arrivée sur le site vous pouvez directement vous connecter grâce à vos identifiants :  
-`email : Alexandre@iim.fr`     
-`mot de passe : alexandre`
+```
+email : Alexandre@iim.fr      
+mot de passe : alexandre
+```
  
  A noter : Pour tout les inscrits sur la base de données, pour se connecter il suffit de rentrer l'email et le mot de passe est la première partie de l'email exemple :  
- `email : crocodile@iim.fr`       
- `mot de passe : crocodile`
+ ```
+ email : crocodile@iim.fr       
+ mot de passe : crocodile
+ ```
  
 # Fonctionnalités
 
