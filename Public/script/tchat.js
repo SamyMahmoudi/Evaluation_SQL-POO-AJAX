@@ -1,38 +1,45 @@
-$('#envoi').click(function(e){
-    e.preventDefault(); // on empêche le bouton d'envoyer le formulaire
+var numSondage = $('#numSondage').text();
+var numId = $('#numId').text();
 
-    var pseudo = $('#pseudo').val() ; // on sécurise les données
-    var message =$('#message').val() ;
-
-    if(pseudo != "" && message != ""){ // on vérifie que les variables ne sont pas vides
-        $.ajax({
-            url : "index.php?page=sondage&c="+ "&u="+"", // on donne l'URL du fichier de traitement
-            method : "POST", // la requête est de type POST
-            data : "pseudo=" + pseudo + "&message=" + message // et on envoie nos données
-        });
-
-       $('#messages').append("<p>" + pseudo + " dit : " + message + "</p>"); // on ajoute le message dans la zone prévue
-    }
-});
-
-function charger(){
-
-
-    var premierID = $('#messages p:first').attr('id'); // on récupère l'id le plus récent
-
+$('#envoieMsg').click(function(e){
+    var message =$('#contenu-message').val();
+    e.preventDefault();
     $.ajax({
-        url : "charger.php?id=" + premierID, // on passe l'id le plus récent au fichier de chargement
+        url : "index.php?page=ajax&function=add&c="+numSondage+"&id="+numId+"&msg="+message,
         dataType:"json",
-        method: "POST",
-        success : function(html){
-            $('#messages').html('');
-            html.forEach(tchat => {
-                
-                $('#messages').append('<li>'+ tchat.tchat_auteur +' a dit : '+ tchat.tchat_message +'</li>');
-            });
+        method : "POST",
+        success:function(renvoi)
+        {
+            keepTchat();
         }
     });
+});
 
+function keepTchat() {
+    $.ajax({
+        url:"index.php?page=ajax&function=refresh&c="+numSondage,
+        dataType:"json",
+        success:function(renvoi){ 
+            $('#container-messages').html("");
+            renvoi.forEach(tchat => {
+                $('#container-messages').append("<li>" + tchat.user_name + " dit : " + tchat.tchat_message + "</li>");
+        });
+        }
+    });
 }
-charger();
-const interval = window.setInterval(charger, 3000);
+function afficheScore() {
+    $.ajax({
+        url:"index.php?page=ajax&function=score&c="+numSondage,
+        dataType:"json",
+        success:function(renvoi){ 
+            $('#score').html("");
+            renvoi.forEach(score => {
+                $('#score').append("<li>"+score.reponse_titre+" a un score de "+score.reponse_score+"</li>");
+        });
+        }
+    });
+}
+afficheScore();
+keepTchat();
+const refreshTchat = window.setInterval(keepTchat, 3000);
+const refreshScore = window.setInterval(afficheScore, 3000);

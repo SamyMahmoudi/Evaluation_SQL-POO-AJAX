@@ -9,6 +9,7 @@ use App\Controller\ConnexionController;
 use App\Controller\AccueilSondController;
 use App\Controller\InscriptionController;
 use App\Controller\DisconnectController;
+use App\Controller\AjaxController;
 
 if(array_key_exists("page",$_GET))
 {
@@ -45,6 +46,10 @@ if(array_key_exists("page",$_GET))
             break;
         case 'disconnect':
             $controller = new  DisconnectController();
+            $controller->render();  
+            break;
+        case 'ajax':
+            $controller = new  AjaxController();
             $controller->render();  
             break;
         default:

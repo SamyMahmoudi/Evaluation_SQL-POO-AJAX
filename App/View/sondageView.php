@@ -27,10 +27,8 @@
                 if($sondage->sondage_statut == "en cours")
                 {
                     echo"<div class='alreadyRep'><p>Vous avez déjà répondu à ce sondage.</p><h2>SCORE ACTUEL :<h2>";
-                    foreach ($reponses as $reponse) 
-                    {
-                     echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
-                    }echo '</div>'; ?>
+                    echo "<ul id='score'></ul></div>";
+    ?>
     <?php 
                 } 
                 else 
@@ -38,7 +36,7 @@
                         echo "<div class='resultatSdg'><h2>Résultats du sondage de ".$sondage->user_name."</h2>";
                         foreach ($reponses as $reponse) 
                         {
-                            echo "<h3>".$reponse->reponse_titre." <span>SCORE: ".$reponse->reponse_score."</span></h3><br>";
+                            echo "<h3>".$reponse->reponse_titre." <span class='scoreAffiche'>SCORE: ".$reponse->reponse_score."</span></h3><br>";
                         }
                 } echo "</div>";
             } 
@@ -107,12 +105,17 @@
                         <ul id="container-messages"></ul>
                     </div>
                     <form method="POST">
-                        <textarea name="contenu-message" id="" cols="30" rows="10"></textarea>
-                        <input type="submit" name="envoie" placeholder="Envoyer le message">
+                        <textarea name="contenu-message" id="contenu-message" cols="30" rows="10"></textarea>
+                        <input type="submit" id="envoieMsg" name="envoieMsg" placeholder="Envoyer le message">
                     </form>
 
+                    <p id="numSondage"><?= $_GET['c'] ?></p>
+                    <p id="numId"><?= $_SESSION['userId'] ?></p>
 
                     </section>
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script/tchat.js"></script>
 </body>
 </html>

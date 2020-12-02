@@ -101,33 +101,27 @@ class SondageModel extends Database{
         $endate = $this->pdo->query("UPDATE t_sondages SET sondage_statut = 'Finish' WHERE sondage_temps <= NOW()");
     }
 
-    public function saveTchat(){
-        if(!empty($_POST['contenu-message'])){ // si les variables ne sont pas vides
-    
-            $message = $_POST['contenu-message'];
-    
-            // puis on entre les données en base de données :
-            $insertion = $this->pdo->prepare('INSERT INTO t_tchat (user_id, tchat_message, sondage_code) VALUES(?, ?, ?)');
-            $insertion->execute(array($_SESSION['userId'], $message, $_GET['c']));
-    
-        }
-        else{
-            echo "Vous avez oublié de remplir un des champs !";
-        }
-    }
+    // public function saveTchat(){
+    //     if(isset($_POST['envoieMsg']))
+    //     { 
+    //         if(!empty($_POST['contenu-message']))
+    //         { 
+    //             $message = $_POST['contenu-message'];
+    //             $insertion = $this->pdo->prepare('INSERT INTO t_tchat (user_id, tchat_message, sondage_code) VALUES(?, ?, ?)');
+    //             $insertion->execute(array($_SESSION['userId'], $message, $_GET['c']));
+    //         }
+    //         else
+    //         {
+    //             echo "Vous avez oublié de remplir un des champs !";
+    //         }
+    //     }
+    // }
 
-    public function refreshTchat(){
-        if(!empty($_GET['id'])){
-
-            $id = (int) $_GET['id'];
-            
-            // on récupère les messages ayant un id plus grand que celui donné
-            $requete = $this->pdo->prepare('SELECT * FROM t_tchat ORDER BY tchat_id ASC');
-            $requete->execute(array(":id" => $id));
-            $messages = $requete->fetchAll();
-
-            echo json_encode($messages); // enfin, on retourne les messages à notre script JS
-        
-        }
-    }
-}
+//     public function refreshTchat(){
+ 
+//             $requete = $this->pdo->prepare('SELECT * FROM t_tchat WHERE sondage_code = ?');
+//             $requete->execute(array($_GET['c']));
+//             $messages = $requete->fetchAll();
+//             echo json_encode($messages);
+//     }
+ }
