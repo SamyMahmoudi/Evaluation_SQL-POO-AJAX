@@ -105,8 +105,9 @@ class ProfilModel extends Database{
             {
                 if($_POST["new-user_password"] == $_POST["confirm_new-user_password"])
                 {
+                    $newpassword = password_hash($_POST["new-user_password"], PASSWORD_DEFAULT);
                     $updateUserPassword = $this->pdo->prepare("UPDATE t_users SET user_password= ? WHERE user_id =".$_SESSION["userId"]);
-                    $updateUserPassword->execute(array($_POST["new-user_password"]));
+                    $updateUserPassword->execute(array($newpassword));
                     header("Location:?page=profil");
                 } 
                 else 

@@ -45,8 +45,7 @@
                     echo "<form class='reponseSdg' method='POST'> <ul>";
                         foreach($reponses as $reponse)
                         {
-                            echo '<li><input type="radio" name="reponse" value="'.$reponse->reponse_titre.'">'.$reponse->reponse_titre.'</li>
-                            <li>'.$reponse->reponse_score.'</li>';    
+                            echo '<li><input type="radio" name="reponse" value="'.$reponse->reponse_titre.'">'.$reponse->reponse_titre.'</li>';                          
                         }
                     echo "<input type='submit' name='envoiRep' value='Envoyer sa réponse'></ul></form>"; 
                 } 
