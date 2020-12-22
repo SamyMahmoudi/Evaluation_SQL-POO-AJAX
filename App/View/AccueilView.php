@@ -11,7 +11,12 @@
 
 <body>
     <?php include ("inc/headerPublic.php") ?>
-    <main class="main-accueil"></main>
+    <main class="main-accueil">
+        <div>
+            <h1>Pour accéder au contenu du site veuillez vous inscrire ou vous connecter</h1>
+            <p><a href="index.php?page=connexion">Connexion</a> / <a href="index.php?page=inscription">Inscription</a></p>
+        </div>
+    </main>
 </body>
 
 </html>

@@ -6,24 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
     <link rel="stylesheet" href="css/inscription.css">
-
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body class="body-inscription">
 
-    <nav class="nav-form">
-        <ul>
-            <li>
-                <a href="index.php?">Accueil</a>
-            </li>
-            <li>
-                <a href="index.php?page=inscription">Inscription</a>
-            </li>
-            <li>
-                <a href="index.php?page=connexion">Connexion</a>
-            </li>
-        </ul>
-    </nav>
+<?php include ("inc/headerPublic.php") ?>
 
 
 

@@ -10,6 +10,7 @@
     flex-direction: column;
     position: fixed;
     top: 10vh;
+    right: 0;
 
 }
 
@@ -18,13 +19,13 @@
     text-align: center;
     padding: 20px 20px 0px;
     color: black;
-    font-style: italic;
     font-size: 32px;
 }
 
 #profil-section h2 {
     padding: 10px 0px 10px 20px;
     color: white;
+    font-weight: normal;
 }
 
 .container-profil {
@@ -79,11 +80,11 @@
 .modif-tool input[type="submit"]:hover {
     cursor: pointer;
     color: white;
-    background-color: rgb(3, 138, 46);
+    background-color: rgb(0, 0, 0);
 }
 
 .modif-tool input[type="submit"] {
-    background-color: rgb(153, 6, 179);
+    background-color: rgb(122, 122, 122);
     color: white;
 }
 
@@ -121,7 +122,7 @@
 }
 
 #sondageUser {
-    margin-left: 32vw;
+    margin-left: 25px;
     margin-top: 12vh;
 }
 

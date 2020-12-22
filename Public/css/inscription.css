@@ -43,6 +43,7 @@
     height: 90vh;
     display: flex;
     align-items: center;
+    background-color: rgb(206, 206, 206);
 }
 
 #form-inscription {
@@ -51,7 +52,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(187, 156, 116);
+    background-color: rgb(155, 155, 158);
     border-radius: 8px;
     padding: 40px 40px;
 }
@@ -70,7 +71,7 @@
 }
 
 #form-inscription input[type="submit"] {
-    background-color: rgb(205, 253, 156);
+    background-color: rgb(255, 255, 255);
     width: 40%;
     cursor: pointer;
     border: none;
@@ -80,7 +81,7 @@
 }
 
 #form-inscription input[type="submit"]:hover {
-    background-color: rgb(96, 40, 40);
+    background-color: rgb(8, 8, 8);
     color: white;
 }
 

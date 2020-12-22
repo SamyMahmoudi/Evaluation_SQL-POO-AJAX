@@ -57,7 +57,7 @@
 }
 
 .recherche-amis table a {
-    color: rgb(47, 160, 47);
+    color: rgb(68, 68, 68);
     font-weight: bold;
     text-decoration: none;
 }
@@ -83,7 +83,9 @@
 }
 
 .recherche-amis table th {
-    background-color: chartreuse;
+    background-color: rgb(155, 155, 158);
+    color: white;
+    font-weight: normal;
 }
 
 .recherche-amis table td button {
@@ -136,7 +138,9 @@
 }
 
 .listing-amis table th {
-    background-color: chartreuse;
+    background-color: rgb(155, 155, 158);
+    color: white;
+    font-size: normal;
 }
 
 .listing-amis table td button {
@@ -154,7 +158,7 @@
 .section-amisConnectes h1 {
     text-align: center;
     padding-top: 30px;
-    font-size: 36px;
+    font-size: 30px;
 }
 
 .section-amisConnectes ul {

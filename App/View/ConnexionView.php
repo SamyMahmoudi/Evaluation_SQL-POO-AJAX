@@ -7,24 +7,11 @@
     <title>page connexion</title>
     <link href="css/connexion.css" rel="stylesheet" type="text/css">
     <link href="css/inscription.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
-    <header>
-        <nav class="nav-form">
-            <ul>
-                <li>
-                    <a href="?">Accueil</a>
-                </li>
-                <li>
-                    <a href="?page=inscription">Inscription</a>
-                </li>
-                <li>
-                    <a href="?page=connexion">Connexion</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+    <?php include ("inc/headerPublic.php") ?>
     <main>
         <div>
             <h1>Connexion</h1>

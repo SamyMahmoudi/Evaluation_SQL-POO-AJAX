@@ -48,11 +48,7 @@ if(array_key_exists("page",$_GET))
             $controller = new  DisconnectController();
             $controller->render();  
             break;
-        case 'ajax':
-            $controller = new  AjaxController();
-            $controller->render();  
-            break;
-        default:
+            default:
             $controller = new  AccueilController();
             $controller->render();
         endswitch;
